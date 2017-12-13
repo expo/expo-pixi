@@ -7,9 +7,7 @@ export default () => (
     style={{ flex: 1 }}
     onContextCreate={async context => {
       const app = ExpoPixi.application({ context });
-      const sprite = await ExpoPixi.spriteAsync(
-        'https://www.celebheights.com/pr1/michael-c-hall.jpg'
-      );
+      const sprite = await ExpoPixi.spriteAsync('http://i.imgur.com/uwrbErh.png');
       app.stage.addChild(sprite);
     }}
   />

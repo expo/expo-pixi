@@ -1,9 +1,8 @@
-
 # expo-pixi
 
 Tools to use [Pixi.js](http://www.pixijs.com/) in Expo!
 
-To get started: `yarn add expo-pixi` in your Expo project and import it with
+To get started: `yarn add expo-pixi pixi.js url path` in your Expo project and import it with
 `import ExpoPixi from 'expo-pixi';`.
 
 ## Functions
@@ -22,14 +21,13 @@ EXGL knows to end a frame when the function: `endFrameEXP` is called on the GL c
 a helper function to resolve the asset passed in.
 `spriteAsync` accepts: - localUri: string | ex: "file://some/path/image.png" - static resource: number | ex: require('./image.png') - remote url: string | ex: "https://www.something.com/image.png" - asset-library: string (iOS `CameraRoll`) | ex: "asset-library://some/path/image.png" - Expo Asset: Expo.Asset | learn more: https://docs.expo.io/versions/latest/guides/assets.html
 
------
+---
 
 You cannot send in relative string paths as Metro Bundler looks for static resources.
 
 ### `ExpoPixi.sprite({ localUri: string, width: number, height: number }): PIXI.Sprite`
 
 Pixi.js does a type check so we wrap our asset in a `HTMLImageElement` shim.
-
 
 ## Example
 
@@ -46,7 +44,7 @@ export default () => (
     onContextCreate={async context => {
       const app = ExpoPixi.application({ context });
       const sprite = await ExpoPixi.spriteAsync(
-        'https://www.celebheights.com/pr1/michael-c-hall.jpg',
+        'http://i.imgur.com/uwrbErh.png',
       );
       app.stage.addChild(sprite);
     }}

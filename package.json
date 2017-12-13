@@ -28,11 +28,15 @@
   },
   "peerDependencies": {
     "expo": "^24.0.0",
-    "pixi.js": "*",
-    "path": "*",
-    "url": "*",
-    "react-native": "*",
-    "prop-types": "*"
+    "pixi.js": "^4.6.2",
+    "url": "^0.11.0",
+    "path": "^0.12.7",
+    "react": "^16.0.0"
+  },
+  "dependencies": {
+    "pixi.js": "^4.6.2",
+    "url": "^0.11.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "expo": "^24.0.0",
