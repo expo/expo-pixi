@@ -16,16 +16,26 @@ EXGL knows to end a frame when the function: `endFrameEXP` is called on the GL c
 
 [Learn more about PIXI.Application props](http://pixijs.download/dev/docs/PIXI.Application.html)
 
+### `ExpoPixi.textureAsync(resource: any): Promise`
+
 ### `ExpoPixi.spriteAsync(resource: any): Promise`
 
 a helper function to resolve the asset passed in.
-`spriteAsync` accepts: - localUri: string | ex: "file://some/path/image.png" - static resource: number | ex: require('./image.png') - remote url: string | ex: "https://www.something.com/image.png" - asset-library: string (iOS `CameraRoll`) | ex: "asset-library://some/path/image.png" - Expo Asset: Expo.Asset | learn more: https://docs.expo.io/versions/latest/guides/assets.html
+`textureAsync` accepts:
 
----
+* localUri: string | ex: "file://some/path/image.png"
+* static resource: number | ex: require('./image.png')
+* remote url: string | ex: "https://www.something.com/image.png"
+* asset-library: string (iOS `CameraRoll`) | ex: "asset-library://some/path/image.png"
+* Expo Asset: Expo.Asset | learn more: https://docs.expo.io/versions/latest/guides/assets.html
 
 You cannot send in relative string paths as Metro Bundler looks for static resources.
 
+---
+
 ### `ExpoPixi.sprite({ localUri: string, width: number, height: number }): PIXI.Sprite`
+
+### `ExpoPixi.texture({ localUri: string, width: number, height: number }): PIXI.Texture`
 
 Pixi.js does a type check so we wrap our asset in a `HTMLImageElement` shim.
 
