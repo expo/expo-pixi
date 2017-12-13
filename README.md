@@ -23,7 +23,7 @@ a helper function to resolve the asset passed in.
 - localUri: string | ex: "file://some/path/image.png" 
 - static resource: number | ex: require('./image.png') 
 - remote url: string | ex: "https://www.something.com/image.png" 
-- asset-library: string (iOS `CameraRoll`) | ex: "asset-library://some/path/image.png" 
+- asset-library: string (iOS [`CameraRoll`](https://facebook.github.io/react-native/docs/next/cameraroll.html#docsNav)) | ex: "asset-library://some/path/image.png" 
 - Expo Asset: Expo.Asset | learn more: https://docs.expo.io/versions/latest/guides/assets.html
 
 ---
