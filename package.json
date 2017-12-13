@@ -1,0 +1,50 @@
+{
+  "name": "expo-pixi",
+  "version": "0.0.0",
+  "description": "Tools for using pixi in Expo",
+  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
+  "files": ["lib"],
+  "main": "lib/index.js",
+  "keywords": [
+    "react",
+    "native",
+    "expo",
+    "exponent",
+    "game",
+    "gl",
+    "graphics",
+    "opengl",
+    "2d",
+    "pixi",
+    "pixi.js",
+    "sprite"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/expo/expo-pixi"
+  },
+  "peerDependencies": {
+    "expo": "^24.0.0",
+    "pixi.js": "*",
+    "path": "*",
+    "url": "*",
+    "react-native": "*",
+    "prop-types": "*"
+  },
+  "devDependencies": {
+    "expo": "^24.0.0",
+    "pixi.js": "^4.6.2",
+    "url": "^0.11.0",
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-native":
+      "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  }
+}
