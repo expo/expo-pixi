@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Tools for using pixi in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": ["lib"],
