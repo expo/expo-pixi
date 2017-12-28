@@ -1,0 +1,22 @@
+{
+  "name": "filter-image",
+  "version": "0.0.0",
+  "description": "expo-pixi filter-image example",
+  "author": "support@expo.io",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "dependencies": {
+    "expo": "^24.0.0",
+    "expo-pixi": "../../expo-pixi-0.1.0.tgz",
+    "path": "^0.12.7",
+    "pixi.js": "^4.6.2",
+    "react": "16.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-universe": "^1.0.6",
+    "prettier": "^1.7.4"
+  }
+}

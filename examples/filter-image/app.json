@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "filter image",
+    "description": "expo-pixi filter image example",
+    "slug": "expo-pixi-filter-image",
+    "sdkVersion": "24.0.0",
+    "version": "1.0.0",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icon.png",
+    "loading": {
+      "icon": "./assets/icon.png",
+      "hideExponentText": false
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

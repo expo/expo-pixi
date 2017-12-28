@@ -57,6 +57,18 @@ A component used for drawing smooth signatures and sketches.
 | onChange    |     () => PIXI.Renderer     |   null   | Invoked whenever a user is done drawing a line  |
 | onReady     | () => WebGLRenderingContext |   null   | Invoked when the GL context is ready to be used |
 
+## `ExpoPixi.FilterImage`
+
+A Image component that uses PIXI.Filter
+
+#### Props
+
+| Property   |            Type            | Default | Description                                                                  |
+| ---------- | :------------------------: | :-----: | ---------------------------------------------------------------------------- |
+| resizeMode |           string           |  null   | Currently only supports `cover`, and `contain`                               |
+| filters    |     Array<PIXI.Filter>     |  null   | Array of filters to apply to the image                                       |
+| source     | number, string, Expo.Asset |  null   | Source can be a static resource, image url (not `{uri}`), or an `Expo.Asset` |
+
 ## Example
 
 **[Snack](https://snack.expo.io/@bacon/base-pixi.js)**
