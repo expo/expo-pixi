@@ -49,13 +49,13 @@ A component used for drawing smooth signatures and sketches.
 
 #### Props
 
-| Property    |            Type             | Default | Description                                     |
-| ----------- | :-------------------------: | :-----: | ----------------------------------------------- |
-| strokeColor |      number or string       |  null   | Color of the lines                              |
-| strokeWidth |           number            |  null   | Weight of the lines                             |
-| strokeAlpha |           number            |  null   | Opacity of the lines                            |
-| onChange    |     () => PIXI.Renderer     |  null   | Invoked whenever a user is done drawing a line  |
-| onReady     | () => WebGLRenderingContext |  null   | Invoked when the GL context is ready to be used |
+| Property    |            Type             | Default     | Description                                     |
+| ----------- | :-------------------------: | :---------: | ----------------------------------------------- |
+| strokeColor |      number or string       |  0x000000   | Color of the lines                              |
+| strokeWidth |           number            |  10         | Weight of the lines                             |
+| strokeAlpha |           number            |  1          | Opacity of the lines                            |
+| onChange    |     () => PIXI.Renderer     |  null       | Invoked whenever a user is done drawing a line  |
+| onReady     | () => WebGLRenderingContext |  null       | Invoked when the GL context is ready to be used |
 
 ## Example
 
