@@ -9,6 +9,102 @@
     lodash "^4.17.4"
     react-native-vector-icons "4.4.2"
 
+"@pixi/filter-advanced-bloom@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-advanced-bloom/-/filter-advanced-bloom-2.4.0.tgz#a82b7eefbe254aa4576b30823671f8a8f30f9586"
+
+"@pixi/filter-ascii@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-ascii/-/filter-ascii-2.4.0.tgz#af4e62c109b7b119e2bcd3cc7e1a84cde11ac6a9"
+
+"@pixi/filter-bloom@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-bloom/-/filter-bloom-2.4.0.tgz#de7be21020ec69af4f18e402e9f474220603b181"
+
+"@pixi/filter-bulge-pinch@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-bulge-pinch/-/filter-bulge-pinch-2.4.0.tgz#9215e2a06c691944a978b163896867b693f5be63"
+
+"@pixi/filter-color-replace@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-color-replace/-/filter-color-replace-2.4.0.tgz#b8f567a3829be58d67a551a044edba10d9ee62d5"
+
+"@pixi/filter-convolution@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-convolution/-/filter-convolution-2.4.0.tgz#7121226fbfb88bc751bb2b3b45870da498620d18"
+
+"@pixi/filter-cross-hatch@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-cross-hatch/-/filter-cross-hatch-2.4.0.tgz#1c4447967425eae19705a47c5885bccda11b9822"
+
+"@pixi/filter-dot@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-dot/-/filter-dot-2.4.0.tgz#a11e978190ea6b1eb77a826b2b8197d2ec7b9050"
+
+"@pixi/filter-drop-shadow@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-drop-shadow/-/filter-drop-shadow-2.4.0.tgz#2df820e1314e979834e2fd5f6703fc764962cd7d"
+
+"@pixi/filter-emboss@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-emboss/-/filter-emboss-2.4.0.tgz#856b4f74209641992cdba8a0c33bb27e67942df4"
+
+"@pixi/filter-glow@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-glow/-/filter-glow-2.4.1.tgz#50b19fbff9ae581c5319014cd0a88b46fa480db5"
+
+"@pixi/filter-godray@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-godray/-/filter-godray-2.4.0.tgz#8b7405dcba531f8e56f12794d9b5557d8aec82ff"
+
+"@pixi/filter-motion-blur@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-motion-blur/-/filter-motion-blur-2.4.0.tgz#9fd099bd8ff021d4296cdfb678279166a46fd3c8"
+
+"@pixi/filter-multi-color-replace@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-multi-color-replace/-/filter-multi-color-replace-2.4.0.tgz#15d6b0dfdcc0987d0e21ddb6735c174a23e50c29"
+
+"@pixi/filter-old-film@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-old-film/-/filter-old-film-2.4.0.tgz#88f28e367d310d065158d62950ba6991bf79377e"
+
+"@pixi/filter-outline@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-outline/-/filter-outline-2.4.1.tgz#ab1b93b9519987764d3a8e5f66d62e7cd5dca3bc"
+
+"@pixi/filter-pixelate@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-pixelate/-/filter-pixelate-2.4.0.tgz#834a2f869876c7e1e972897b50a9eb583aac2980"
+
+"@pixi/filter-radial-blur@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-radial-blur/-/filter-radial-blur-2.4.0.tgz#5d03f464bb259bac533044c64420c677957c964e"
+
+"@pixi/filter-rgb-split@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-rgb-split/-/filter-rgb-split-2.4.0.tgz#585217059b2d6caa0fa15109f8beb74440e5224e"
+
+"@pixi/filter-shockwave@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-shockwave/-/filter-shockwave-2.4.0.tgz#7842f158b13fa264318a3234b93434f209e69e8c"
+
+"@pixi/filter-simple-lightmap@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-simple-lightmap/-/filter-simple-lightmap-2.4.0.tgz#c8c8c17f29e7aa22e0b628eeb7dee9875585ba22"
+
+"@pixi/filter-tilt-shift@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-tilt-shift/-/filter-tilt-shift-2.4.0.tgz#55da9038417b3875d2ef116ebfc1fa3f5de22074"
+
+"@pixi/filter-twist@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-twist/-/filter-twist-2.4.0.tgz#ccab0789ef56db5d07e1ad6f3f86e78262d50667"
+
+"@pixi/filter-zoom-blur@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-zoom-blur/-/filter-zoom-blur-2.4.0.tgz#2e0219f9809c4d5bd55f548f3d2cb74c55605078"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -3253,6 +3349,35 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+pixi-filters@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/pixi-filters/-/pixi-filters-2.4.1.tgz#ba78ecab4aa0b99d2177256cdec14dee06a0227e"
+  dependencies:
+    "@pixi/filter-advanced-bloom" "^2.4.0"
+    "@pixi/filter-ascii" "^2.4.0"
+    "@pixi/filter-bloom" "^2.4.0"
+    "@pixi/filter-bulge-pinch" "^2.4.0"
+    "@pixi/filter-color-replace" "^2.4.0"
+    "@pixi/filter-convolution" "^2.4.0"
+    "@pixi/filter-cross-hatch" "^2.4.0"
+    "@pixi/filter-dot" "^2.4.0"
+    "@pixi/filter-drop-shadow" "^2.4.0"
+    "@pixi/filter-emboss" "^2.4.0"
+    "@pixi/filter-glow" "^2.4.1"
+    "@pixi/filter-godray" "^2.4.0"
+    "@pixi/filter-motion-blur" "^2.4.0"
+    "@pixi/filter-multi-color-replace" "^2.4.0"
+    "@pixi/filter-old-film" "^2.4.0"
+    "@pixi/filter-outline" "^2.4.1"
+    "@pixi/filter-pixelate" "^2.4.0"
+    "@pixi/filter-radial-blur" "^2.4.0"
+    "@pixi/filter-rgb-split" "^2.4.0"
+    "@pixi/filter-shockwave" "^2.4.0"
+    "@pixi/filter-simple-lightmap" "^2.4.0"
+    "@pixi/filter-tilt-shift" "^2.4.0"
+    "@pixi/filter-twist" "^2.4.0"
+    "@pixi/filter-zoom-blur" "^2.4.0"
 
 pixi-gl-core@^1.1.4:
   version "1.1.4"

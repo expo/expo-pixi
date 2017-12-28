@@ -9,6 +9,7 @@
     "expo": "^24.0.0",
     "expo-pixi": "../../expo-pixi-0.1.0.tgz",
     "path": "^0.12.7",
+    "pixi-filters": "^2.4.1",
     "pixi.js": "^4.6.2",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
