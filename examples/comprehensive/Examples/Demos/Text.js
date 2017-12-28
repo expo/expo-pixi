@@ -34,15 +34,13 @@ export default (basic = async context => {
   /* jshint ignore:end */
 
   async function init() {
-    PIXI.loader
-      .add('desyrel', 'required/assets/desyrel.xml')
-      .load(onAssetsLoaded);
+    PIXI.loader.add('desyrel', 'required/assets/desyrel.xml').load(onAssetsLoaded);
 
     function onAssetsLoaded() {
-      var bitmapFontText = new PIXI.extras.BitmapText(
-        'bitmap fonts are\n now supported!',
-        { font: '35px Desyrel', align: 'right' },
-      );
+      var bitmapFontText = new PIXI.extras.BitmapText('bitmap fonts are\n now supported!', {
+        font: '35px Desyrel',
+        align: 'right',
+      });
 
       bitmapFontText.x = app.renderer.width - bitmapFontText.textWidth - 20;
       bitmapFontText.y = 20;
@@ -51,9 +49,7 @@ export default (basic = async context => {
     }
 
     // add a shiny background...
-    var background = await ExpoPixi.spriteAsync(
-      require('../../assets/textDemoBG.jpg'),
-    );
+    var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/textDemoBG.jpg'));
     background.width = app.renderer.width;
     background.height = app.renderer.height;
     app.stage.addChild(background);

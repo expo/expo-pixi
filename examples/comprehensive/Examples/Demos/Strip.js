@@ -18,9 +18,7 @@ export default (basic = async context => {
     points.push(new PIXI.Point(i * ropeLength, 0));
   }
 
-  var stripTexture = await ExpoPixi.textureAsync(
-    require('../../assets/snake.png'),
-  );
+  var stripTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/snake.png'));
 
   var strip = new PIXI.mesh.Rope(stripTexture, points);
 

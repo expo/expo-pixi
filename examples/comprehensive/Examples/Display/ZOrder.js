@@ -33,12 +33,8 @@ export default (basic = async context => {
   var blurFilter = new PIXI.filters.BlurFilter();
   blurFilter.blur = 0.5;
 
-  var texture_green = await ExpoPixi.textureAsync(
-    require('../../assets/square_green.png'),
-  );
-  var texture_blue = await ExpoPixi.textureAsync(
-    require('../../assets/square_blue.png'),
-  );
+  var texture_green = await ExpoPixi.textureAsync(require('../../assets/pixi/square_green.png'));
+  var texture_blue = await ExpoPixi.textureAsync(require('../../assets/pixi/square_blue.png'));
 
   // create a texture from an image path
 

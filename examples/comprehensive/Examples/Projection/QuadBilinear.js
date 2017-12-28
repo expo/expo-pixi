@@ -31,9 +31,7 @@ export default (basic = async context => {
   });
 
   //add sprite itself
-  var containerTexture = await ExpoPixi.textureAsync(
-    require('../../assets/SceneRotate.jpg'),
-  );
+  var containerTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/SceneRotate.jpg'));
 
   var containerSprite = new PIXI.projection.Sprite2s(containerTexture);
   containerSprite.anchor.set(0.5);
@@ -54,9 +52,7 @@ export default (basic = async context => {
 
   // let us add sprite to make it more funny
 
-  var bunnyTexture = await ExpoPixi.textureAsync(
-    require('../../assets/flowerTop.png'),
-  );
+  var bunnyTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/flowerTop.png'));
 
   var bunny = new PIXI.projection.Sprite2s(bunnyTexture);
   bunny.anchor.set(0.5);
@@ -129,7 +125,7 @@ export default (basic = async context => {
       // DRAG
       obj.position.set(
         obj.dragObjStart.x + (dragPointerEnd.x - obj.dragPointerStart.x),
-        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y),
+        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y)
       );
     }
   }

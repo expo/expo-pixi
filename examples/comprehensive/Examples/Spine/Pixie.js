@@ -10,9 +10,7 @@ export default (basic = async context => {
   app.stop();
 
   // load spine data
-  PIXI.loader
-    .add('pixie', 'required/assets/spine/Pixie.json')
-    .load(onAssetsLoaded);
+  PIXI.loader.add('pixie', 'required/assets/spine/Pixie.json').load(onAssetsLoaded);
 
   var postition = 0,
     background,
@@ -23,18 +21,10 @@ export default (basic = async context => {
   app.stage.interactive = true;
 
   async function onAssetsLoaded(loader, res) {
-    background = await ExpoPixi.spriteAsync(
-      require('../../assets/iP4_BGtile.jpg'),
-    );
-    background2 = await ExpoPixi.spriteAsync(
-      require('../../assets/iP4_BGtile.jpg'),
-    );
-    foreground = await ExpoPixi.spriteAsync(
-      require('../../assets/iP4_ground.png'),
-    );
-    foreground2 = await ExpoPixi.spriteAsync(
-      require('../../assets/iP4_ground.png'),
-    );
+    background = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
+    background2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
+    foreground = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
+    foreground2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
 
     foreground.y = foreground2.y = 640 - foreground2.height;
 

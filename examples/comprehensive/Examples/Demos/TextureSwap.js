@@ -10,14 +10,10 @@ export default (basic = async context => {
   var bol = false;
 
   // create a texture from an image path
-  var texture = await ExpoPixi.textureAsync(
-    require('../../assets/flowerTop.png'),
-  );
+  var texture = await ExpoPixi.textureAsync(require('../../assets/pixi/flowerTop.png'));
 
   // create a second texture
-  var secondTexture = await ExpoPixi.spriteAsync(
-    require('../../assets/eggHead.png'),
-  );
+  var secondTexture = await ExpoPixi.spriteAsync(require('../../assets/pixi/eggHead.png'));
 
   // create a new Sprite using the texture
   var dude = new PIXI.Sprite(texture);

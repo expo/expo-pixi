@@ -10,7 +10,7 @@ export default (basic = async context => {
 
   app.stage.interactive = true;
 
-  var bg = await ExpoPixi.spriteAsync(require('../../assets/BGrotate.jpg'));
+  var bg = await ExpoPixi.spriteAsync(require('../../assets/pixi/BGrotate.jpg'));
 
   bg.anchor.set(0.5);
 
@@ -24,22 +24,16 @@ export default (basic = async context => {
   container.y = app.renderer.height / 2;
 
   // add a bunch of sprites
-  var bgFront = await ExpoPixi.spriteAsync(
-    require('../../assets/SceneRotate.jpg'),
-  );
+  var bgFront = await ExpoPixi.spriteAsync(require('../../assets/pixi/SceneRotate.jpg'));
   bgFront.anchor.set(0.5);
 
-  var light2 = await ExpoPixi.spriteAsync(
-    require('../../assets/LightRotate2.png'),
-  );
+  var light2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/LightRotate2.png'));
   light2.anchor.set(0.5);
 
-  var light1 = await ExpoPixi.spriteAsync(
-    require('../../assets/LightRotate1.png'),
-  );
+  var light1 = await ExpoPixi.spriteAsync(require('../../assets/pixi/LightRotate1.png'));
   light1.anchor.set(0.5);
 
-  var panda = await ExpoPixi.spriteAsync(require('../../assets/panda.png'));
+  var panda = await ExpoPixi.spriteAsync(require('../../assets/pixi/panda.png'));
   panda.anchor.set(0.5);
 
   container.addChild(bgFront, light2, light1, panda);

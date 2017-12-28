@@ -11,7 +11,7 @@ export default (containerPivot = async context => {
 
   app.stage.addChild(container);
 
-  var texture = await ExpoPixi.textureAsync(require('../../assets/bunny.png'));
+  var texture = await ExpoPixi.textureAsync(require('../../assets/pixi/bunny.png'));
 
   // Create a 5x5 grid of bunnies
   for (var i = 0; i < 25; i++) {

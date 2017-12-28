@@ -6,7 +6,7 @@ export default (basic = async context => {
   const app = ExpoPixi.application({
     context,
   });
-  // const bunny = await ExpoPixi.spriteAsync(require('../../assets/bunny.png'));
+  // const bunny = await ExpoPixi.spriteAsync(require('../../assets/pixi/bunny.png'));
 
   // TODO: load json
   PIXI.loader.add('required/assets/basics/fighter.json').load(onAssetsLoaded);

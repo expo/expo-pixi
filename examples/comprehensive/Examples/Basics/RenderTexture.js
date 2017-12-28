@@ -10,7 +10,7 @@ export default (basic = async context => {
   var container = new PIXI.Container();
   app.stage.addChild(container);
 
-  var texture = await ExpoPixi.textureAsync(require('../../assets/bunny.png'));
+  var texture = await ExpoPixi.textureAsync(require('../../assets/pixi/bunny.png'));
 
   for (var i = 0; i < 25; i++) {
     var bunny = new PIXI.Sprite(texture);

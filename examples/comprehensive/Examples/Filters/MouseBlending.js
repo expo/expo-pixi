@@ -8,9 +8,7 @@ export default (basic = async context => {
   });
 
   // Create background image
-  var background = await ExpoPixi.spriteAsync(
-    require('../../assets/bkg-grass.jpg'),
-  );
+  var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/bkg-grass.jpg'));
   background.width = app.screen.width;
   background.height = app.screen.height;
   app.stage.addChild(background);

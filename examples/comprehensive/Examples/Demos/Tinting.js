@@ -14,7 +14,7 @@ export default (basic = async context => {
 
   for (var i = 0; i < totalDudes; i++) {
     // create a new Sprite that uses the image name that we just generated as its source
-    var dude = await ExpoPixi.spriteAsync(require('../../assets/eggHead.png'));
+    var dude = await ExpoPixi.spriteAsync(require('../../assets/pixi/eggHead.png'));
     // set the anchor point so the texture is centerd on the sprite
     dude.anchor.set(0.5);
 
@@ -49,7 +49,7 @@ export default (basic = async context => {
     -dudeBoundsPadding,
     -dudeBoundsPadding,
     app.renderer.width + dudeBoundsPadding * 2,
-    app.renderer.height + dudeBoundsPadding * 2,
+    app.renderer.height + dudeBoundsPadding * 2
   );
 
   app.ticker.add(function() {

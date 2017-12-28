@@ -9,15 +9,15 @@ export default (basic = async context => {
 
   app.stage.interactive = true;
 
-  var bg = await ExpoPixi.spriteAsync(require('../../assets/bkg.jpg'));
+  var bg = await ExpoPixi.spriteAsync(require('../../assets/pixi/bkg.jpg'));
 
   app.stage.addChild(bg);
 
-  var cells = await ExpoPixi.spriteAsync(require('../../assets/cells.png'));
+  var cells = await ExpoPixi.spriteAsync(require('../../assets/pixi/cells.png'));
 
   cells.scale.set(1.5);
 
-  var mask = await ExpoPixi.spriteAsync(require('../../assets/flowerTop.png'));
+  var mask = await ExpoPixi.spriteAsync(require('../../assets/pixi/flowerTop.png'));
 
   mask.anchor.set(0.5);
   mask.x = 310;

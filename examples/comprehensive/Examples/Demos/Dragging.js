@@ -8,7 +8,7 @@ export default (basic = async context => {
   });
 
   // create a texture from an image path
-  var texture = await ExpoPixi.textureAsync(require('../../assets/bunny.png'));
+  var texture = await ExpoPixi.textureAsync(require('../../assets/pixi/bunny.png'));
 
   // Scale mode for pixelation
   texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
@@ -16,7 +16,7 @@ export default (basic = async context => {
   for (var i = 0; i < 10; i++) {
     createBunny(
       Math.floor(Math.random() * app.renderer.width),
-      Math.floor(Math.random() * app.renderer.height),
+      Math.floor(Math.random() * app.renderer.height)
     );
   }
 

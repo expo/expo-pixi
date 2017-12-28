@@ -43,12 +43,8 @@ export default (container = async context => {
   blurFilter.blur = 0.5;
 
   // create a texture from an image path
-  var texture_green = await ExpoPixi.textureAsync(
-    require('../../assets/square_green.png'),
-  );
-  var texture_blue = await ExpoPixi.textureAsync(
-    require('../../assets/square_blue.png'),
-  );
+  var texture_green = await ExpoPixi.textureAsync(require('../../assets/pixi/square_green.png'));
+  var texture_blue = await ExpoPixi.textureAsync(require('../../assets/pixi/square_blue.png'));
 
   // make obsolete containers. Why do we need them?
   // Just to show that we can do everything without caring of actual parent container

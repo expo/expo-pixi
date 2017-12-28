@@ -8,9 +8,7 @@ export default (basic = async context => {
   });
 
   // create a new background sprite
-  var background = await ExpoPixi.spriteAsync(
-    require('../../assets/BGrotate.jpg'),
-  );
+  var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/BGrotate.jpg'));
   background.width = app.renderer.width;
   background.height = app.renderer.height;
   app.stage.addChild(background);
@@ -22,9 +20,7 @@ export default (basic = async context => {
 
   for (var i = 0; i < totaldudes; i++) {
     // create a new Sprite that uses the image name that we just generated as its source
-    var dude = await ExpoPixi.spriteAsync(
-      require('../../assets/flowerTop.png'),
-    );
+    var dude = await ExpoPixi.spriteAsync(require('../../assets/pixi/flowerTop.png'));
 
     dude.anchor.set(0.5);
 
@@ -60,7 +56,7 @@ export default (basic = async context => {
     -dudeBoundsPadding,
     -dudeBoundsPadding,
     app.renderer.width + dudeBoundsPadding * 2,
-    app.renderer.height + dudeBoundsPadding * 2,
+    app.renderer.height + dudeBoundsPadding * 2
   );
 
   app.ticker.add(function() {

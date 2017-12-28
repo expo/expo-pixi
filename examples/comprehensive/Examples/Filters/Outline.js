@@ -22,13 +22,10 @@ export default (basic = async context => {
   }
 
   for (var i = 0; i < 20; i++) {
-    const bunny = await ExpoPixi.spriteAsync(require('../../assets/bunny.png'));
+    const bunny = await ExpoPixi.spriteAsync(require('../../assets/pixi/bunny.png'));
     // bunny.anchor.set(0.5);
     bunny.interactive = true;
-    bunny.position.set(
-      ((Math.random() * 2 - 1) * 300) | 0,
-      ((Math.random() * 2 - 1) * 200) | 0,
-    );
+    bunny.position.set(((Math.random() * 2 - 1) * 300) | 0, ((Math.random() * 2 - 1) * 200) | 0);
     bunny.scale.x = ((Math.random() * 3) | (0 * 0.1)) + 1;
     bunny.on('pointerover', filterOn).on('pointerout', filterOff);
     filterOff.call(bunny);

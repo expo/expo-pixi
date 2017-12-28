@@ -17,12 +17,12 @@ export default (basic = async context => {
     -padding,
     -padding,
     app.renderer.width + padding * 2,
-    app.renderer.height + padding * 2,
+    app.renderer.height + padding * 2
   );
   var maggots = [];
 
   for (var i = 0; i < 20; i++) {
-    var maggot = await ExpoPixi.spriteAsync(require('../../assets/maggot.png'));
+    var maggot = await ExpoPixi.spriteAsync(require('../../assets/pixi/maggot.png'));
     maggot.anchor.set(0.5);
     container.addChild(maggot);
 
@@ -39,12 +39,8 @@ export default (basic = async context => {
     maggots.push(maggot);
   }
 
-  var displacementSprite = await ExpoPixi.spriteAsync(
-    require('../../assets/displace.png'),
-  );
-  var displacementFilter = new PIXI.filters.DisplacementFilter(
-    displacementSprite,
-  );
+  var displacementSprite = await ExpoPixi.spriteAsync(require('../../assets/pixi/displace.png'));
+  var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 
   app.stage.addChild(displacementSprite);
 
@@ -54,7 +50,7 @@ export default (basic = async context => {
   displacementFilter.scale.y = 110;
   displacementSprite.anchor.set(0.5);
 
-  var ring = await ExpoPixi.spriteAsync(require('../../assets/ring.png'));
+  var ring = await ExpoPixi.spriteAsync(require('../../assets/pixi/ring.png'));
 
   ring.anchor.set(0.5);
 
@@ -62,7 +58,7 @@ export default (basic = async context => {
 
   app.stage.addChild(ring);
 
-  var bg = await ExpoPixi.spriteAsync(require('../../assets/bkg-grass.jpg'));
+  var bg = await ExpoPixi.spriteAsync(require('../../assets/pixi/bkg-grass.jpg'));
   bg.width = app.renderer.width;
   bg.height = app.renderer.height;
 
@@ -75,10 +71,7 @@ export default (basic = async context => {
   function onPointerMove(eventData) {
     ring.visible = true;
 
-    displacementSprite.position.set(
-      eventData.data.global.x - 25,
-      eventData.data.global.y,
-    );
+    displacementSprite.position.set(eventData.data.global.x - 25, eventData.data.global.y);
     ring.position.copy(displacementSprite.position);
   }
 

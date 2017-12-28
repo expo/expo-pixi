@@ -9,7 +9,7 @@ export default (basic = async context => {
   });
 
   // create a new Sprite from an image path.
-  var bunny = await ExpoPixi.spriteAsync(require('../../assets/bunny.png'));
+  var bunny = await ExpoPixi.spriteAsync(require('../../assets/pixi/bunny.png'));
   // center the sprite's anchor point
   bunny.anchor.set(0.5);
 

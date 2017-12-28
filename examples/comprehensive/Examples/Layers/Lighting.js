@@ -11,14 +11,8 @@ export default (container = async context => {
   //create the stage instead of container
   app.stage = new PIXI.display.Stage();
 
-  const backgroundTexture = await ExpoPixi.textureAsync(
-    require('../../assets/p2.jpeg'),
-  );
-  var background = new PIXI.extras.TilingSprite(
-    backgroundTexture,
-    WIDTH,
-    HEIGHT,
-  );
+  const backgroundTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/p2.jpeg'));
+  var background = new PIXI.extras.TilingSprite(backgroundTexture, WIDTH, HEIGHT);
   app.stage.addChild(background);
   //make container for bunnies
   var bunnyWorld = new PIXI.Container();
@@ -42,9 +36,7 @@ export default (container = async context => {
   ambient.endFill();
   lighting.addChild(ambient); //<-- try comment it
 
-  var bunnyTexture = await ExpoPixi.textureAsync(
-    require('../../assets/bunny.png'),
-  );
+  var bunnyTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/bunny.png'));
   function updateBunny(bunny) {
     bunny.x += bunny.vx;
     bunny.y += bunny.vy;

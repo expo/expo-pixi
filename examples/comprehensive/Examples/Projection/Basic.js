@@ -29,9 +29,7 @@ export default (basic = async context => {
 
   //add sprite itself
 
-  const bunnyTexture = await ExpoPixi.textureAsync(
-    require('../../assets/flowerTop.png'),
-  );
+  const bunnyTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/flowerTop.png'));
   var bunny = new PIXI.projection.Sprite2d(bunnyTexture);
   bunny.anchor.set(0.5);
   bunny.scale.set(0.7);
@@ -142,7 +140,7 @@ export default (basic = async context => {
       // DRAG
       obj.position.set(
         obj.dragObjStart.x + (dragPointerEnd.x - obj.dragPointerStart.x),
-        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y),
+        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y)
       );
     }
   }

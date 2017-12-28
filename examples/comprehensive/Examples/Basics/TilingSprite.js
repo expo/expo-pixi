@@ -8,21 +8,21 @@ export default (basic = async context => {
   });
 
   // create a texture from an image path
-  var texture = await ExpoPixi.textureAsync(require('../../assets/p2.jpeg'));
+  const texture = await ExpoPixi.textureAsync(require('../../assets/pixi/p2.jpeg'));
 
   /* create a tiling sprite ...
  * requires a texture, a width and a height
  * in WebGL the image size should preferably be a power of two
  */
   /// TODO: tiling
-  var tilingSprite = new PIXI.extras.TilingSprite(
+  const tilingSprite = new PIXI.extras.TilingSprite(
     texture,
     app.renderer.width,
-    app.renderer.height,
+    app.renderer.height
   );
   app.stage.addChild(tilingSprite);
 
-  var count = 0;
+  let count = 0;
 
   app.ticker.add(function() {
     count += 0.005;

@@ -8,9 +8,7 @@ export default (basic = async context => {
   });
 
   // Create background image
-  var background = await ExpoPixi.spriteAsync(
-    require('../../assets/bkg-grass.jpg'),
-  );
+  var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/bkg-grass.jpg'));
   background.width = app.renderer.width;
   background.height = app.renderer.height;
   app.stage.addChild(background);
@@ -19,9 +17,7 @@ export default (basic = async context => {
   app.stop();
 
   /// TODO: shader load
-  PIXI.loader
-    .add('shader', 'required/assets/basics/shader.frag')
-    .load(onLoaded);
+  PIXI.loader.add('shader', 'required/assets/basics/shader.frag').load(onLoaded);
 
   var filter;
 

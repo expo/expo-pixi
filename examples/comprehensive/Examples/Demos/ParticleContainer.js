@@ -25,9 +25,7 @@ export default (basic = async context => {
   for (var i = 0; i < totalSprites; i++) {
     // create a new Sprite
 
-    var dude = await ExpoPixi.spriteAsync(
-      require('../../assets/tinyMaggot.png'),
-    );
+    var dude = await ExpoPixi.spriteAsync(require('../../assets/pixi/tinyMaggot.png'));
 
     dude.tint = Math.random() * 0xe8d4cd;
 
@@ -66,7 +64,7 @@ export default (basic = async context => {
     -dudeBoundsPadding,
     -dudeBoundsPadding,
     app.renderer.width + dudeBoundsPadding * 2,
-    app.renderer.height + dudeBoundsPadding * 2,
+    app.renderer.height + dudeBoundsPadding * 2
   );
 
   var tick = 0;

@@ -17,9 +17,7 @@ export default (basic = async context => {
   var container = new PIXI.projection.Container2d();
   container.position.set(app.screen.width / 2, app.screen.height);
 
-  var surfaceTexture = await ExpoPixi.textureAsync(
-    require('../../assets/bkg.jpg'),
-  );
+  var surfaceTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/bkg.jpg'));
   var surface = new PIXI.projection.Sprite2d(surfaceTexture);
   surface.anchor.set(0.5, 1.0);
   //surface.scale.y = -1; //sorry, have to do that to make a correct projection
@@ -33,9 +31,7 @@ export default (basic = async context => {
   squarePlane.anchor.set(0.5, 0.0);
   squarePlane.position.set(-app.screen.width / 4, -app.screen.height / 2);
 
-  var bunnyTexture = await ExpoPixi.spriteAsync(
-    require('../../assets/flowerTop.png'),
-  );
+  var bunnyTexture = await ExpoPixi.spriteAsync(require('../../assets/pixi/flowerTop.png'));
 
   var bunny = new PIXI.projection.Sprite2d(bunnyTexture);
   bunny.anchor.set(0.5, 1.0);
@@ -85,12 +81,9 @@ export default (basic = async context => {
       //plane bounds
       obj.position.x = Math.min(
         Math.max(obj.position.x, -app.screen.width / 2 + 10),
-        app.screen.width / 2 - 10,
+        app.screen.width / 2 - 10
       );
-      obj.position.y = Math.min(
-        Math.max(obj.position.y, -app.screen.height + 10),
-        10,
-      );
+      obj.position.y = Math.min(Math.max(obj.position.y, -app.screen.height + 10), 10);
     } else {
       //far
       obj.position.x = Math.min(Math.max(obj.position.x, 0), app.screen.width);
@@ -158,7 +151,7 @@ export default (basic = async context => {
       // DRAG
       obj.position.set(
         obj.dragObjStart.x + (dragPointerEnd.x - obj.dragPointerStart.x),
-        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y),
+        obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y)
       );
     }
   }

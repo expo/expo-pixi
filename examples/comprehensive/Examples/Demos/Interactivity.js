@@ -8,9 +8,7 @@ export default (basic = async context => {
   });
 
   // create a background...
-  var background = await ExpoPixi.spriteAsync(
-    require('../../assets/button_test_BG.jpg'),
-  );
+  var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/button_test_BG.jpg'));
 
   background.width = app.renderer.width;
   background.height = app.renderer.height;
@@ -19,16 +17,10 @@ export default (basic = async context => {
   app.stage.addChild(background);
 
   // create some textures from an image path
-  var textureButton = await ExpoPixi.textureAsync(
-    require('../../assets/button.png'),
-  );
+  var textureButton = await ExpoPixi.textureAsync(require('../../assets/pixi/button.png'));
 
-  var textureButtonDown = await ExpoPixi.textureAsync(
-    require('../../assets/buttonDown.png'),
-  );
-  var textureButtonOver = await ExpoPixi.textureAsync(
-    require('../../assets/buttonOver.png'),
-  );
+  var textureButtonDown = await ExpoPixi.textureAsync(require('../../assets/pixi/buttonDown.png'));
+  var textureButtonOver = await ExpoPixi.textureAsync(require('../../assets/pixi/buttonOver.png'));
 
   var buttons = [];
 

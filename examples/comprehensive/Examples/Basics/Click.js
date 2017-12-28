@@ -6,7 +6,7 @@ export default (basic = async context => {
   const app = ExpoPixi.application({
     context,
   });
-  // const bunny = await ExpoPixi.spriteAsync(require('../../assets/bunny.png'));
+  // const bunny = await ExpoPixi.spriteAsync(require('../../assets/pixi/bunny.png'));
 
   // Scale mode for all textures, will retain pixelation
   PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;

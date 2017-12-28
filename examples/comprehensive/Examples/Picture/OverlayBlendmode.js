@@ -7,29 +7,20 @@ export default (OverlayBlendmode = async context => {
   });
 
   // create a new background sprite
-  var background = await ExpoPixi.spriteAsync(
-    require('../../assets/BGrotate.jpg'),
-  );
+  var background = await ExpoPixi.spriteAsync(require('../../assets/pixi/BGrotate.jpg'));
   background.width = app.renderer.width;
   background.height = app.renderer.height;
   app.stage.addChild(background);
 
   //speed up the process, because OVERLAY and HARD_LIGHT will use copyTex instead of readPixels
   app.stage.filters = [new PIXI.filters.VoidFilter()];
-  app.stage.filterArea = new PIXI.Rectangle(
-    0,
-    0,
-    app.renderer.width,
-    app.renderer.height,
-  );
+  app.stage.filterArea = new PIXI.Rectangle(0, 0, app.renderer.width, app.renderer.height);
 
   // create an array to store a reference to the dudes
   var dudeArray = [];
 
   var totaldudes = 20;
-  var texture = await ExpoPixi.textureAsync(
-    require('../../assets/flowerTop.png'),
-  );
+  var texture = await ExpoPixi.textureAsync(require('../../assets/pixi/flowerTop.png'));
 
   for (var i = 0; i < totaldudes; i++) {
     // create a new Sprite that uses the image name that we just generated as its source
@@ -49,10 +40,7 @@ export default (OverlayBlendmode = async context => {
     dude.y = Math.floor(Math.random() * app.renderer.height);
 
     // The important bit of this example, this is how you change the default blend mode of the sprite
-    dude.blendMode =
-      Math.random() > 0.5
-        ? PIXI.BLEND_MODES.OVERLAY
-        : PIXI.BLEND_MODES.HARD_LIGHT;
+    dude.blendMode = Math.random() > 0.5 ? PIXI.BLEND_MODES.OVERLAY : PIXI.BLEND_MODES.HARD_LIGHT;
 
     // create some extra properties that will control movement
     dude.direction = Math.random() * Math.PI * 2;
@@ -76,7 +64,7 @@ export default (OverlayBlendmode = async context => {
     -dudeBoundsPadding,
     -dudeBoundsPadding,
     app.renderer.width + dudeBoundsPadding * 2,
-    app.renderer.height + dudeBoundsPadding * 2,
+    app.renderer.height + dudeBoundsPadding * 2
   );
 
   var tick = 0;

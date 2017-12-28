@@ -7,23 +7,17 @@ export default (basic = async context => {
     context,
   });
 
-  var bg = await ExpoPixi.spriteAsync(
-    require('../../assets/depth_blur_BG.jpg'),
-  );
+  var bg = await ExpoPixi.spriteAsync(require('../../assets/pixi/depth_blur_BG.jpg'));
   bg.width = app.renderer.width;
   bg.height = app.renderer.height;
   app.stage.addChild(bg);
 
-  var littleDudes = await ExpoPixi.spriteAsync(
-    require('../../assets/depth_blur_dudes.jpg'),
-  );
+  var littleDudes = await ExpoPixi.spriteAsync(require('../../assets/pixi/depth_blur_dudes.jpg'));
   littleDudes.x = app.renderer.width / 2 - 315;
   littleDudes.y = 200;
   app.stage.addChild(littleDudes);
 
-  var littleRobot = await ExpoPixi.spriteAsync(
-    require('../../assets/depth_blur_moby.jpg'),
-  );
+  var littleRobot = await ExpoPixi.spriteAsync(require('../../assets/pixi/depth_blur_moby.jpg'));
   littleRobot.x = app.renderer.width / 2 - 200;
   littleRobot.y = 100;
   app.stage.addChild(littleRobot);
