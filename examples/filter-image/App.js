@@ -115,6 +115,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity
+          style={styles.touchable}
           onPress={() => {
             const index = (this.state.index + 1) % filters.length;
             this.setState({
@@ -135,8 +136,12 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    minWidth: '100%',
+    minHeight: '100%',
+    flex: 1,
+  },
+  touchable: {
+    flex: 1,
   },
   image: {
     width: '100%',
