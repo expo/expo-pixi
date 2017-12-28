@@ -31,12 +31,14 @@
     "pixi.js": "^4.6.2",
     "url": "^0.11.0",
     "path": "^0.12.7",
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "pixi-filters": "*"
   },
   "dependencies": {
     "pixi.js": "^4.6.2",
     "url": "^0.11.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pixi-filters": "*"
   },
   "devDependencies": {
     "expo": "^24.0.0",

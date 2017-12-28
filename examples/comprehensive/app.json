@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "comprehensive",
+    "description": "expo-pixi comprehensive example",
+    "slug": "expo-pixi-comprehensive",
+    "sdkVersion": "24.0.0",
+    "version": "1.0.0",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icon.png",
+    "loading": {
+      "icon": "./assets/icon.png",
+      "hideExponentText": false
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4", "otf", "xml", "json", "atlas", "frag", "xml"]
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
