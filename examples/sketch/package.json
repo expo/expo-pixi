@@ -1,7 +1,7 @@
 {
-  "name": "basic",
+  "name": "sketch",
   "version": "0.0.0",
-  "description": "expo-pixi basic example",
+  "description": "expo-pixi sketch example",
   "author": "support@expo.io",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
