@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "sketch",
+    "description": "expo-pixi sketch example",
+    "slug": "expo-pixi-sketch",
+    "sdkVersion": "24.0.0",
+    "version": "1.0.0",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icon.png",
+    "loading": {
+      "icon": "./assets/icon.png",
+      "hideExponentText": false
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

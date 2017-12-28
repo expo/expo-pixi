@@ -39,6 +39,24 @@ You cannot send in relative string paths as Metro Bundler looks for static resou
 
 Pixi.js does a type check so we wrap our asset in a `HTMLImageElement` shim.
 
+## `ExpoPixi.Sketch`
+
+A component used for drawing smooth signatures and sketches.
+
+**See the sketch example on how to save the images!**
+
+> Notice: the edges and ends are not rounded as this is not supported in PIXI yet: [Issue](https://github.com/pixijs/pixi.js/issues/1637)
+
+#### Props
+
+| Property    |            Type             | Default | Description                                     |
+| ----------- | :-------------------------: | :-----: | ----------------------------------------------- |
+| strokeColor |      number or string       |  null   | Color of the lines                              |
+| strokeWidth |           number            |  null   | Weight of the lines                             |
+| strokeAlpha |           number            |  null   | Opacity of the lines                            |
+| onChange    |     () => PIXI.Renderer     |  null   | Invoked whenever a user is done drawing a line  |
+| onReady     | () => WebGLRenderingContext |  null   | Invoked when the GL context is ready to be used |
+
 ## Example
 
 **[Snack](https://snack.expo.io/@bacon/base-pixi.js)**
