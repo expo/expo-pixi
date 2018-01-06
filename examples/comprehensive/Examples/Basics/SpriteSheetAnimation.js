@@ -1,30 +1,30 @@
 import ExpoPixi from 'expo-pixi';
 import * as PIXI from 'pixi.js';
+import { Asset } from 'expo';
 
-export default (basic = async context => {
-  //http://pixijs.io/examples/#/basics/basic.js
+export default async context => {
   const app = ExpoPixi.application({
     context,
   });
-  // const bunny = await ExpoPixi.spriteAsync(require('../../assets/pixi/bunny.png'));
 
-  // TODO: load json
-  PIXI.loader.add('required/assets/basics/fighter.json').load(onAssetsLoaded);
+  const asset = Asset.fromModule(require('../../assets/pixi/fighter.json'))
+  await asset.downloadAsync();
+
+  PIXI.loader.add(asset.localUri, onAssetsLoaded).load();
 
   function onAssetsLoaded() {
     // create an array of textures from an image path
-    var frames = [];
+    const frames = [];
 
-    for (var i = 0; i < 30; i++) {
-      var val = i < 10 ? '0' + i : i;
+    for (let i = 0; i < 30; i++) {
+      const val = i < 10 ? '0' + i : i;
 
-      //// TODO - add magic
       // magically works since the spritesheet was loaded with the pixi loader
       frames.push(PIXI.Texture.fromFrame('rollSequence00' + val + '.png'));
     }
 
     // create an AnimatedSprite (brings back memories from the days of Flash, right ?)
-    var anim = new PIXI.extras.AnimatedSprite(frames);
+    const anim = new PIXI.extras.AnimatedSprite(frames);
 
     /*
  * An AnimatedSprite inherits all the properties of a PIXI sprite
@@ -43,4 +43,4 @@ export default (basic = async context => {
       anim.rotation += 0.01;
     });
   }
-});
+};

@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tools for using pixi in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": ["lib"],
@@ -32,13 +32,15 @@
     "url": "^0.11.0",
     "path": "^0.12.7",
     "react": "^16.0.0",
-    "pixi-filters": "*"
+    "pixi-filters": "*",
+    "expo-asset-utils": "^0.0.0"
   },
   "dependencies": {
     "pixi.js": "^4.6.2",
     "url": "^0.11.0",
     "path": "^0.12.7",
-    "pixi-filters": "*"
+    "pixi-filters": "*",
+
   },
   "devDependencies": {
     "expo": "^24.0.0",
