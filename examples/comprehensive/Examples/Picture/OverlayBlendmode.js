@@ -1,5 +1,4 @@
-import ExpoPixi from 'expo-pixi';
-import * as PIXI from 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
 export default (OverlayBlendmode = async context => {
   const app = ExpoPixi.application({

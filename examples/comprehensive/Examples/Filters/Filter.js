@@ -1,5 +1,4 @@
-import ExpoPixi from 'expo-pixi';
-import * as PIXI from 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
 export default (Filter = async context => {
   //http://pixijs.io/examples/#/filters/filter.js

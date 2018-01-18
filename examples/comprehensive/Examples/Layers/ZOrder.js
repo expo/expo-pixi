@@ -1,5 +1,4 @@
-import ExpoPixi from 'expo-pixi';
-import * as PIXI from 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
 export default (container = async context => {
   // This is demo of pixi-display.js, https://github.com/gameofbombs/pixi-display

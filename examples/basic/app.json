@@ -5,7 +5,7 @@
     "slug": "expo-pixi-basic",
     "sdkVersion": "24.0.0",
     "version": "1.0.0",
-    "primaryColor": "#cccccc",
+    "primaryColor": "#E44262",
     "icon": "./assets/icon.png",
     "loading": {
       "icon": "./assets/icon.png",

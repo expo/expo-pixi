@@ -5,7 +5,8 @@
     "slug": "expo-pixi-sketch",
     "sdkVersion": "24.0.0",
     "version": "1.0.0",
-    "primaryColor": "#cccccc",
+    "primaryColor": "#E44262",
+    "privacy": "public",
     "icon": "./assets/icon.png",
     "loading": {
       "icon": "./assets/icon.png",

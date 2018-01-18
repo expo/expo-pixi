@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
   },
   image: {
     height: '50%',
-    backgroundColor: 'orange',
+    backgroundColor: '#E44262',
   },
 });

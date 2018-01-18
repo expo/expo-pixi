@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tools for using pixi in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": ["lib"],
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/expo/expo-pixi"
+    "url": "https://github.com/expo/expo-pixi.git"
   },
   "peerDependencies": {
     "expo": "^24.0.0",

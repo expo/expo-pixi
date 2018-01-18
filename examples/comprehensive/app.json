@@ -5,7 +5,8 @@
     "slug": "expo-pixi-comprehensive",
     "sdkVersion": "24.0.0",
     "version": "1.0.0",
-    "primaryColor": "#cccccc",
+    "privacy": "public",
+    "primaryColor": "#E44262",
     "icon": "./assets/icon.png",
     "loading": {
       "icon": "./assets/icon.png",

@@ -9,7 +9,7 @@
     "EventEmitter": "^1.0.0",
     "expo": "^24.0.0",
     "expo-asset-utils": "^0.0.0",
-    "expo-pixi": "../../expo-pixi-0.1.1.tgz",
+    "expo-pixi": "../../expo-pixi-0.1.2.tgz",
     "path": "^0.12.7",
     "pixi-filters": "^2.4.1",
     "pixi.js": "^4.6.2",

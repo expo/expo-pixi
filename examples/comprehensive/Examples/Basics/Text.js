@@ -1,5 +1,4 @@
-import ExpoPixi from 'expo-pixi';
-import * as PIXI from 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
 export default (basic = async context => {
   //http://pixijs.io/examples/#/basics/basic.js
@@ -31,10 +30,7 @@ export default (basic = async context => {
     wordWrapWidth: 440,
   });
 
-  var richText = new PIXI.Text(
-    'Rich text with a lot of options and across multiple lines',
-    style,
-  );
+  var richText = new PIXI.Text('Rich text with a lot of options and across multiple lines', style);
   richText.x = 30;
   richText.y = 180;
 

@@ -1,5 +1,4 @@
-import ExpoPixi from 'expo-pixi';
-import * as PIXI from 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 import { Asset } from 'expo';
 
 export default async context => {
@@ -7,7 +6,7 @@ export default async context => {
     context,
   });
 
-  const asset = Asset.fromModule(require('../../assets/pixi/fighter.json'))
+  const asset = Asset.fromModule(require('../../assets/pixi/fighter.json'));
   await asset.downloadAsync();
 
   PIXI.loader.add(asset.localUri, onAssetsLoaded).load();
