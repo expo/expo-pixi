@@ -3,7 +3,7 @@
     "name": "basic",
     "description": "expo-pixi basic example",
     "slug": "expo-pixi-basic",
-    "sdkVersion": "24.0.0",
+    "sdkVersion": "25.0.0",
     "version": "1.0.0",
     "primaryColor": "#E44262",
     "icon": "./assets/icon.png",

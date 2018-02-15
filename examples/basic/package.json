@@ -1,21 +1,15 @@
 {
   "name": "basic",
-  "version": "0.0.0",
+  "version": "0.2.1",
   "description": "expo-pixi basic example",
   "author": "support@expo.io",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "EventEmitter": "^1.0.0",
-    "expo": "^24.0.0",
-    "expo-asset-utils": "^0.0.0",
-    "expo-pixi": "../../expo-pixi-0.1.2.tgz",
-    "path": "^0.12.7",
-    "pixi-filters": "^2.4.1",
-    "pixi.js": "^4.6.2",
+    "expo": "^25.0.0",
+    "expo-pixi": "../../expo-pixi-v0.2.1.tgz",
     "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
-    "url": "^0.11.0"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
   },
   "devDependencies": {
     "eslint": "^4.9.0",

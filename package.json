@@ -1,9 +1,12 @@
 {
   "name": "expo-pixi",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tools for using pixi in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
-  "files": ["lib"],
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "keywords": [
     "react",
@@ -26,24 +29,25 @@
     "type": "git",
     "url": "https://github.com/expo/expo-pixi.git"
   },
-  "peerDependencies": {
-    "expo": "^25.0.0",
-    "pixi.js": "^4.6.2",
-    "url": "^0.11.0",
+  "dependencies": {
+    "@expo/browser-polyfill": "^0.0.0-alpha.3",
+    "EventEmitter": "^1.0.0",
+    "expo-asset-utils": "^0.0.4-alpha.0",
     "path": "^0.12.7",
-    "react": "^16.0.0",
     "pixi-filters": "*",
-    "expo-asset-utils": "^0.0.2",
-    "EventEmitter": "^1.0.0"
+    "pixi.js": "^4.7.0",
+    "url": "^0.11.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "expo": "^25.0.0",
-    "pixi.js": "^4.6.2",
-    "url": "^0.11.0",
     "path": "^0.12.7",
-    "react": "^16.0.0",
-    "react-native":
-      "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
+    "pixi.js": "^4.7.0",
+    "react": "^16.2.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "url": "^0.11.0"
   },
   "directories": {
     "example": "examples",
