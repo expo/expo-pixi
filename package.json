@@ -2,10 +2,22 @@
   "name": "expo-pixi",
   "version": "0.2.2",
   "description": "Tools for using pixi in Expo",
-  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "license": "MIT",
+  "readmeFilename": "README.md",
   "files": ["lib"],
   "main": "lib/index.js",
+  "homepage": "https://github.com/expo/expo-pixi#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expo/expo-pixi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expo/expo-pixi/issues"
+  },
+  "author": {
+    "email": "bacon@expo.io",
+    "name": "Evan Bacon"
+  },
   "keywords": [
     "react",
     "native",
@@ -20,12 +32,25 @@
     "pixi.js",
     "sprite"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "eslintConfig": {
+    "extends": "universe/native"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/expo/expo-pixi.git"
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "jest": {
+    "preset": "jest-react-native"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepush": "npm run lint && npm run test",
+    "postinstall":
+      "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit",
+    "lint:examples": "eslint examples/",
+
+    "lint": "eslint lib/",
+    "lint:fix": "eslint lib/ --fix"
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.0-alpha.3",
@@ -40,16 +65,9 @@
     "react": "^16.2.0"
   },
   "devDependencies": {
-    "expo": "^25.0.0",
-    "path": "^0.12.7",
-    "pixi.js": "^4.7.0",
-    "react": "^16.2.0",
-    "react-native":
-      "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
-    "url": "^0.11.0"
-  },
-  "directories": {
-    "example": "examples",
-    "lib": "lib"
+    "eslint": "^4.18.1",
+    "eslint-config-universe": "^1.0.6",
+    "husky": "^0.14.3",
+    "prettier": "^1.7.4"
   }
 }

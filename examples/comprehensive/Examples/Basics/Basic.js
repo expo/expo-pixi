@@ -1,7 +1,8 @@
-import ExpoPixi from 'expo-pixi';
 import 'pixi.js';
 
-export default (basic = async context => {
+import ExpoPixi from 'expo-pixi';
+
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -25,4 +26,4 @@ export default (basic = async context => {
     // creates frame-independent tranformation
     bunny.rotation += 0.1 * delta;
   });
-});
+};

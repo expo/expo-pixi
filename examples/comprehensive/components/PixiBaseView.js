@@ -1,14 +1,12 @@
-import React from 'react';
-import Expo from 'expo';
-
-import ExpoPixi from 'expo-pixi';
-
+import 'path';
 import 'pixi.js';
 import 'url';
-import 'path';
+
+import Expo from 'expo';
+import React from 'react';
+import { PixelRatio, View } from 'react-native';
 
 import TouchableView from './TouchableView';
-import { View, PixelRatio } from 'react-native';
 
 const scale = PixelRatio.get();
 function scaled({ x, y }) {
