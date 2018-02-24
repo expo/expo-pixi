@@ -4,7 +4,9 @@
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -39,16 +41,13 @@
     "example": "examples",
     "lib": "lib"
   },
-  "jest": {
-    "preset": "jest-react-native"
-  },
+  "pre-push": [
+    "lint"
+  ],
   "scripts": {
-    "test": "jest",
-    "prepush": "npm run lint && npm run test",
-    "postinstall":
-      "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit",
+    "prepush": "npm run lint",
+    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit",
     "lint:examples": "eslint examples/",
-
     "lint": "eslint lib/",
     "lint:fix": "eslint lib/ --fix"
   },
@@ -67,7 +66,10 @@
   "devDependencies": {
     "eslint": "^4.18.1",
     "eslint-config-universe": "^1.0.6",
+    "eslint-plugin-jest": "^21.2.0",
     "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "jest-expo": "^25.1.0",
     "prettier": "^1.7.4"
   }
 }
