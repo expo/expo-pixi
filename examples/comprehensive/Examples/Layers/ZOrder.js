@@ -1,5 +1,5 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
-
+require('pixi-layers');
 export default async context => {
   // This is demo of pixi-display.js, https://github.com/gameofbombs/pixi-display
   // Drag the rabbits to understand what's going on

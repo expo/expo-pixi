@@ -1,6 +1,7 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
 export default async context => {
+  // PIXI.compressedTextures = require('pixi-compressed-textures');
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,

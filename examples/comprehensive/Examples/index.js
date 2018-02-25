@@ -23,6 +23,7 @@ export default {
     Interactivity: require(`./Demos/Interactivity.js`),
     MaskPlusRenderTexture: require(`./Demos/MaskPlusRenderTexture.js`),
     Masking: require(`./Demos/Masking.js`),
+    MouseTrail: require(`./Demos/MouseTrail.js`),
     ParticleContainer: require(`./Demos/ParticleContainer.js`),
     RenderTexture: require(`./Demos/RenderTexture.js`),
     Strip: require(`./Demos/Strip.js`),

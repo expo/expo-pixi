@@ -1,5 +1,5 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
-
+require('pixi-layers');
 export default async context => {
   const PAD = 80;
   //the plugin is here: https://github.com/pixijs/pixi-display/tree/layers, its WIP
@@ -9,6 +9,9 @@ export default async context => {
 
   //create the stage instead of container
   app.stage = new PIXI.display.Stage();
+
+  const WIDTH = app.renderer.width;
+  const HEIGHT = app.renderer.width;
 
   const backgroundTexture = await ExpoPixi.textureAsync(require('../../assets/pixi/p2.jpeg'));
   var background = new PIXI.extras.TilingSprite(backgroundTexture, WIDTH, HEIGHT);

@@ -1,6 +1,9 @@
+import { Asset } from 'expo';
 import ExpoPixi, { PIXI } from 'expo-pixi';
+require('pixi-spine');
 
 export default async context => {
+  console.log(!!PIXI.spine);
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -8,45 +11,52 @@ export default async context => {
 
   app.stop();
 
+  const asset = Asset.fromModule(require('../../assets/pixi/dragon.json'));
+  await asset.downloadAsync();
+
+  PIXI.loader.add(asset.localUri, onAssetsLoaded).load();
+
   ///TODO: Load Json
   // load spine data
-  PIXI.loader.add('dragon', 'required/assets/spine/dragon.json').load(onAssetsLoaded);
+  // PIXI.loader.add('dragon', 'required/assets/spine/dragon.json').load(onAssetsLoaded);
 
   var dragon = null;
 
   function onAssetsLoaded(loader, res) {
-    // instantiate the spine animation
-    dragon = new PIXI.spine.Spine(res.dragon.spineData);
-    dragon.skeleton.setToSetupPose();
-    dragon.update(0);
-    dragon.autoUpdate = false;
+    console.log('on assets loaded', !!loader, res);
 
-    // create a container for the spine animation and add the animation to it
-    var dragonCage = new PIXI.Container();
-    dragonCage.addChild(dragon);
+    // // instantiate the spine animation
+    // dragon = new PIXI.spine.Spine(res.dragon.spineData);
+    // dragon.skeleton.setToSetupPose();
+    // dragon.update(0);
+    // dragon.autoUpdate = false;
 
-    // measure the spine animation and position it inside its container to align it to the origin
-    var localRect = dragon.getLocalBounds();
-    dragon.position.set(-localRect.x, -localRect.y);
+    // // create a container for the spine animation and add the animation to it
+    // var dragonCage = new PIXI.Container();
+    // dragonCage.addChild(dragon);
 
-    // now we can scale, position and rotate the container as any other display object
-    var scale = Math.min(
-      app.renderer.width * 0.7 / dragonCage.width,
-      app.renderer.height * 0.7 / dragonCage.height
-    );
-    dragonCage.scale.set(scale, scale);
-    dragonCage.position.set(
-      (app.renderer.width - dragonCage.width) * 0.5,
-      (app.renderer.height - dragonCage.height) * 0.5
-    );
+    // // measure the spine animation and position it inside its container to align it to the origin
+    // var localRect = dragon.getLocalBounds();
+    // dragon.position.set(-localRect.x, -localRect.y);
 
-    // add the container to the stage
-    app.stage.addChild(dragonCage);
+    // // now we can scale, position and rotate the container as any other display object
+    // var scale = Math.min(
+    //   app.renderer.width * 0.7 / dragonCage.width,
+    //   app.renderer.height * 0.7 / dragonCage.height
+    // );
+    // dragonCage.scale.set(scale, scale);
+    // dragonCage.position.set(
+    //   (app.renderer.width - dragonCage.width) * 0.5,
+    //   (app.renderer.height - dragonCage.height) * 0.5
+    // );
 
-    // once position and scaled, set the animation to play
-    dragon.state.setAnimation(0, 'flying', true);
+    // // add the container to the stage
+    // app.stage.addChild(dragonCage);
 
-    app.start();
+    // // once position and scaled, set the animation to play
+    // dragon.state.setAnimation(0, 'flying', true);
+
+    // app.start();
   }
 
   app.ticker.add(function() {

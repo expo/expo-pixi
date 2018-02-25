@@ -1,4 +1,5 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
+require('pixi-picture');
 
 export default async context => {
   const app = ExpoPixi.application({

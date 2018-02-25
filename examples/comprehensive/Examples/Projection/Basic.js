@@ -1,4 +1,5 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
+require('pixi-projection');
 
 export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
