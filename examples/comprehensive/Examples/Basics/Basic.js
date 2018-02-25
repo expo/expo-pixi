@@ -1,5 +1,3 @@
-import 'pixi.js';
-
 import ExpoPixi from 'expo-pixi';
 
 export default async context => {

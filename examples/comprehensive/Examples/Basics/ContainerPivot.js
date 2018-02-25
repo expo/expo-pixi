@@ -1,6 +1,6 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (containerPivot = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/container-pivot.js
   const app = ExpoPixi.application({
     context,
@@ -35,4 +35,4 @@ export default (containerPivot = async context => {
     // use delta to create frame-independent tranform
     container.rotation -= 0.01 * delta;
   });
-});
+};

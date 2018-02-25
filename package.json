@@ -1,12 +1,10 @@
 {
   "name": "expo-pixi",
-  "version": "0.2.2",
+  "version": "0.2.2.alpha-0",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -41,12 +39,10 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": [
-    "lint"
-  ],
+  "pre-push": ["lint"],
   "scripts": {
     "prepush": "npm run lint",
-    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit",
+
     "lint:examples": "eslint examples/",
     "lint": "eslint lib/",
     "lint:fix": "eslint lib/ --fix"

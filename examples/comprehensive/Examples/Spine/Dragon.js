@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -11,9 +10,7 @@ export default (basic = async context => {
 
   ///TODO: Load Json
   // load spine data
-  PIXI.loader
-    .add('dragon', 'required/assets/spine/dragon.json')
-    .load(onAssetsLoaded);
+  PIXI.loader.add('dragon', 'required/assets/spine/dragon.json').load(onAssetsLoaded);
 
   var dragon = null;
 
@@ -35,12 +32,12 @@ export default (basic = async context => {
     // now we can scale, position and rotate the container as any other display object
     var scale = Math.min(
       app.renderer.width * 0.7 / dragonCage.width,
-      app.renderer.height * 0.7 / dragonCage.height,
+      app.renderer.height * 0.7 / dragonCage.height
     );
     dragonCage.scale.set(scale, scale);
     dragonCage.position.set(
       (app.renderer.width - dragonCage.width) * 0.5,
-      (app.renderer.height - dragonCage.height) * 0.5,
+      (app.renderer.height - dragonCage.height) * 0.5
     );
 
     // add the container to the stage
@@ -56,4 +53,4 @@ export default (basic = async context => {
     // update the spine animation, only needed if dragon.autoupdate is set to false
     dragon.update(0.01666666666667); // HARDCODED FRAMERATE!
   });
-});
+};

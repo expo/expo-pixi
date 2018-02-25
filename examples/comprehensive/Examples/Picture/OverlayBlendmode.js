@@ -1,6 +1,6 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (OverlayBlendmode = async context => {
+export default async context => {
   const app = ExpoPixi.application({
     context,
   });
@@ -94,4 +94,4 @@ export default (OverlayBlendmode = async context => {
     // increment the ticker
     tick += 0.1;
   });
-});
+};

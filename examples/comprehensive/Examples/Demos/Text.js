@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -13,7 +12,7 @@ export default (basic = async context => {
       families: ['Snippet', 'Arvo:700italic', 'Podkova:700'],
     },
 
-    active: function() {
+    active() {
       // do something
       init();
     },
@@ -24,7 +23,7 @@ export default (basic = async context => {
   (function() {
     var wf = document.createElement('script');
     wf.src =
-      ('https:' === document.location.protocol ? 'https' : 'http') +
+      (document.location.protocol === 'https:' ? 'https' : 'http') +
       '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
     wf.type = 'text/javascript';
     wf.async = 'true';
@@ -108,4 +107,4 @@ export default (basic = async context => {
       spinningText.rotation += 0.03;
     });
   }
-});
+};

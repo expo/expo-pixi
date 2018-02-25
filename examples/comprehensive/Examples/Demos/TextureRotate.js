@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -23,34 +22,18 @@ export default (basic = async context => {
     var textures = [texture];
     var D8 = PIXI.GroupD8;
     for (var rotate = 1; rotate < 16; rotate++) {
-      var h = D8.isSwapWidthHeight(rotate)
-        ? texture.frame.width
-        : texture.frame.height;
-      var w = D8.isSwapWidthHeight(rotate)
-        ? texture.frame.height
-        : texture.frame.width;
+      var h = D8.isSwapWidthHeight(rotate) ? texture.frame.width : texture.frame.height;
+      var w = D8.isSwapWidthHeight(rotate) ? texture.frame.height : texture.frame.width;
 
       var frame = texture.frame;
       var crop = new PIXI.Rectangle(texture.frame.x, texture.frame.y, w, h);
       var trim = crop;
       if (rotate % 2 == 0) {
-        var rotatedTexture = new PIXI.Texture(
-          texture.baseTexture,
-          frame,
-          crop,
-          trim,
-          rotate,
-        );
+        var rotatedTexture = new PIXI.Texture(texture.baseTexture, frame, crop, trim, rotate);
       } else {
         //HACK to avoid exception
         //PIXI doesnt like diamond-shaped UVs, because they are different in canvas and webgl
-        var rotatedTexture = new PIXI.Texture(
-          texture.baseTexture,
-          frame,
-          crop,
-          trim,
-          rotate - 1,
-        );
+        var rotatedTexture = new PIXI.Texture(texture.baseTexture, frame, crop, trim, rotate - 1);
         rotatedTexture.rotate++;
       }
       textures.push(rotatedTexture);
@@ -82,4 +65,4 @@ export default (basic = async context => {
       app.stage.addChild(text);
     }
   }
-});
+};

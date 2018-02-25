@@ -3,7 +3,7 @@
     "name": "comprehensive",
     "description": "expo-pixi comprehensive example",
     "slug": "expo-pixi-comprehensive",
-    "sdkVersion": "24.0.0",
+    "sdkVersion": "25.0.0",
     "version": "1.0.0",
     "privacy": "public",
     "primaryColor": "#E44262",

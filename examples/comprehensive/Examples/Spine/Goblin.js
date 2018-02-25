@@ -1,16 +1,13 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
   });
 
   // load spine data
-  PIXI.loader
-    .add('goblins', 'required/assets/spine/goblins.json')
-    .load(onAssetsLoaded);
+  PIXI.loader.add('goblins', 'required/assets/spine/goblins.json').load(onAssetsLoaded);
 
   app.stage.interactive = true;
   app.stage.buttonMode = true;
@@ -41,4 +38,4 @@ export default (basic = async context => {
       goblin.skeleton.setSlotsToSetupPose();
     });
   }
-});
+};

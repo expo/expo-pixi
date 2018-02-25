@@ -1,6 +1,6 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (container = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/container.js
   const app = ExpoPixi.application({
     context,
@@ -24,4 +24,4 @@ export default (container = async context => {
   // Center on the screen
   container.x = (app.renderer.width - container.width) / 2;
   container.y = (app.renderer.height - container.height) / 2;
-});
+};

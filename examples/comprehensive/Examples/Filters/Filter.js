@@ -1,6 +1,6 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (Filter = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/filters/filter.js
   const app = ExpoPixi.application({
     context,
@@ -81,4 +81,4 @@ export default (Filter = async context => {
     matrix[5] = Math.sin(count / 2);
     matrix[6] = Math.sin(count / 4);
   });
-});
+};

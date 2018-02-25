@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   // This is demo of pixi-display.js, https://github.com/gameofbombs/pixi-display
   // Drag the rabbits to understand what's going on
   const app = ExpoPixi.application({
@@ -135,4 +134,4 @@ export default (basic = async context => {
       this.y = newPosition.y - this.dragPoint.y;
     }
   }
-});
+};

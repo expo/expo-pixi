@@ -1,6 +1,6 @@
 import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (container = async context => {
+export default async context => {
   const PAD = 80;
   //the plugin is here: https://github.com/pixijs/pixi-display/tree/layers, its WIP
   const app = ExpoPixi.application({
@@ -86,4 +86,4 @@ export default (container = async context => {
   app.ticker.add(function() {
     bunnyWorld.children.forEach(updateBunny);
   });
-});
+};

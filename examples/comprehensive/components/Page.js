@@ -10,30 +10,32 @@ function isFunction(functionToCheck) {
 }
 
 class Page extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: (navigation.state.params || {}).title || 'Pixi.js',
+  static navigationOptions = ({ navigation: { state: { params } } }) => ({
+    title: (params || {}).title || 'Pixi.js',
   });
 
+  get data() {
+    return (this.props.navigation.state.params || {}).data || Examples;
+  }
+
+  onPress = item => {
+    const { data } = this;
+    const nextData = data[item];
+    this.props.navigation.navigate('Page', {
+      data: nextData,
+      title: item,
+    });
+  };
+
   render() {
-    const data = (this.props.navigation.state.params || {}).data || Examples;
+    const { data } = this;
     const shouldRenderPage = isFunction(data.default || {});
     if (shouldRenderPage) {
       return <PixiBaseView app={data.default} />;
     } else {
-      return (
-        <List
-          data={Object.keys(data)}
-          onPress={item => {
-            const nextData = data[item];
-            this.props.navigation.navigate('Page', {
-              data: nextData,
-              title: item,
-            });
-          }}
-        />
-      );
+      const input = Object.keys(data);
+      return <List data={input} onPress={this.onPress} />;
     }
-    return null;
   }
 }
 

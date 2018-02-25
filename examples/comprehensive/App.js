@@ -1,16 +1,7 @@
-import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import Navigator from './components/Navigator';
+export default Navigator;
 
-import Page from './components/Page';
-
-const ModalStack = StackNavigator({
-  Page: {
-    screen: Page,
-  },
-});
-
-export default ModalStack;
-
-// import PixiView from './Components/PixiBaseView';
+// import React from 'react';
+// import PixiView from './components/PixiBaseView';
 // import app from './Examples/Basics/Container';
 // export default () => <PixiView app={app} />;

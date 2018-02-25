@@ -1,21 +1,14 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
   });
 
   // create two render textures... these dynamic textures will be used to draw the scene into itself
-  var renderTexture = PIXI.RenderTexture.create(
-    app.renderer.width,
-    app.renderer.height,
-  );
-  var renderTexture2 = PIXI.RenderTexture.create(
-    app.renderer.width,
-    app.renderer.height,
-  );
+  var renderTexture = PIXI.RenderTexture.create(app.renderer.width, app.renderer.height);
+  var renderTexture2 = PIXI.RenderTexture.create(app.renderer.width, app.renderer.height);
   var currentTexture = renderTexture;
 
   // create a new sprite that uses the render texture we created above
@@ -89,4 +82,4 @@ export default (basic = async context => {
     // the 'true' clears the texture before the content is rendered
     app.renderer.render(app.stage, renderTexture2, false);
   });
-});
+};

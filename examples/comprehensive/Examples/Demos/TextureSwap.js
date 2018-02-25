@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -44,4 +43,4 @@ export default (basic = async context => {
     // just for fun, let's rotate mr rabbit a little
     dude.rotation += 0.1;
   });
-});
+};

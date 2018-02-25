@@ -1,4 +1,3 @@
-// @flow
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import { PanResponder, View } from 'react-native';
@@ -13,11 +12,10 @@ export default class TouchableView extends React.Component {
     onTouchesCancelled: PropTypes.func.isRequired,
   };
 
-  buildGestures = () =>
-    PanResponder.create({
-      // onResponderTerminate: this.props.onResponderTerminate ,
+  _panResponder;
+  componentWillMount() {
+    this._panResponder = PanResponder.create({
       onStartShouldSetResponder: () => true,
-      //   onResponderTerminationRequest: this.props.onResponderTerminationRequest,
       onStartShouldSetPanResponderCapture: () => true,
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
       onPanResponderGrant: ({ nativeEvent }, gestureState) =>
@@ -31,17 +29,9 @@ export default class TouchableView extends React.Component {
           ? this.props.onTouchesCancelled({ ...nativeEvent, gestureState })
           : this.props.onTouchesEnded({ ...nativeEvent, gestureState }),
     });
-
-  componentWillMount() {
-    this._panResponder = this.buildGestures();
   }
 
   render() {
-    const { children, id, style, ...props } = this.props;
-    return (
-      <View {...props} style={[style]} {...this._panResponder.panHandlers}>
-        {children}
-      </View>
-    );
+    return <View {...this.props} {...this._panResponder.panHandlers} />;
   }
 }

@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -10,9 +9,7 @@ export default (basic = async context => {
   app.stop();
 
   /// TODO: json loader - spritesheet
-  PIXI.loader
-    .add('spritesheet', 'required/assets/mc.json')
-    .load(onAssetsLoaded);
+  PIXI.loader.add('spritesheet', 'required/assets/mc.json').load(onAssetsLoaded);
 
   function onAssetsLoaded() {
     // create an array to store the textures
@@ -21,9 +18,7 @@ export default (basic = async context => {
 
     for (i = 0; i < 26; i++) {
       /// TODO: Texture from frame
-      var texture = PIXI.Texture.fromFrame(
-        'Explosion_Sequence_A ' + (i + 1) + '.png',
-      );
+      var texture = PIXI.Texture.fromFrame('Explosion_Sequence_A ' + (i + 1) + '.png');
       explosionTextures.push(texture);
     }
 
@@ -43,4 +38,4 @@ export default (basic = async context => {
     // start animating
     app.start();
   }
-});
+};

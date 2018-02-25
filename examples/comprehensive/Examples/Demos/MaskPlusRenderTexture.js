@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -31,10 +30,7 @@ export default (basic = async context => {
     imageToReveal.width = app.screen.width;
     imageToReveal.height = app.screen.height;
 
-    var renderTexture = PIXI.RenderTexture.create(
-      app.screen.width,
-      app.screen.height,
-    );
+    var renderTexture = PIXI.RenderTexture.create(app.screen.width, app.screen.height);
 
     var renderTextureSprite = new PIXI.Sprite(renderTexture);
     stage.addChild(renderTextureSprite);
@@ -63,4 +59,4 @@ export default (basic = async context => {
       dragging = false;
     }
   }
-});
+};

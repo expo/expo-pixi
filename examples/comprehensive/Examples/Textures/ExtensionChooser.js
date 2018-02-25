@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -27,16 +26,8 @@ export default (basic = async context => {
   };
 
   loader
-    .add(
-      'building1',
-      'required/assets/compressed/building1.png',
-      textureOptions1,
-    )
-    .add(
-      'building2',
-      'required/assets/compressed/building2.png',
-      textureOptions2,
-    )
+    .add('building1', 'required/assets/compressed/building1.png', textureOptions1)
+    .add('building2', 'required/assets/compressed/building2.png', textureOptions2)
     .add('atlas1', 'required/assets/compressed/buildings.json', atlasOptions)
     .load(function(loader, resources) {
       var spr1 = new PIXI.Sprite(resources.building1.texture);
@@ -53,4 +44,4 @@ export default (basic = async context => {
   // ATTENTION: PIXI recognizes resolution of atlas by suffix (@1x, @2x, ... )
   // If you dont specify that, resolution of the atlas will be taken from "meta.scale"
   // which in our example is 1 and 0.5 instead of 2 and 1. It will shrink everything!
-});
+};

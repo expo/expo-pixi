@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -76,7 +75,7 @@ export default (basic = async context => {
       Math.random() * 800,
       Math.random() * 600,
       Math.random() * 800,
-      Math.random() * 600,
+      Math.random() * 600
     );
   }
 
@@ -95,4 +94,4 @@ export default (basic = async context => {
 
     thing.rotation = count * 0.1;
   });
-});
+};

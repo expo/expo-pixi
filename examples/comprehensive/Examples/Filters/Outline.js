@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   // this example uses plugin https://github.com/pixijs/pixi-extra-filters/
 
   const app = ExpoPixi.application({
@@ -31,4 +30,4 @@ export default (basic = async context => {
     filterOff.call(bunny);
     app.stage.addChild(bunny);
   }
-});
+};

@@ -1,7 +1,3 @@
-import 'path';
-import 'pixi.js';
-import 'url';
-
 import Expo from 'expo';
 import React from 'react';
 import { PixelRatio, View } from 'react-native';

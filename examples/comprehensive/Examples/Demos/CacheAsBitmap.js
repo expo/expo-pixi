@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -11,19 +10,12 @@ export default (basic = async context => {
 
   ///TODO
   // load resources
-  PIXI.loader
-    .add('spritesheet', 'required/assets/monsters.json')
-    .load(onAssetsLoaded);
+  PIXI.loader.add('spritesheet', 'required/assets/monsters.json').load(onAssetsLoaded);
 
   ///TODO
   // holder to store aliens
   var aliens = [];
-  var alienFrames = [
-    'eggHead.png',
-    'flowerTop.png',
-    'helmlok.png',
-    'skully.png',
-  ];
+  var alienFrames = ['eggHead.png', 'flowerTop.png', 'helmlok.png', 'skully.png'];
 
   var count = 0;
 
@@ -88,4 +80,4 @@ export default (basic = async context => {
     alienContainer.scale.y = Math.sin(count);
     alienContainer.rotation += 0.01;
   });
-});
+};

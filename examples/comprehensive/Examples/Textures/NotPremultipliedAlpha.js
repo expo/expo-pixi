@@ -1,7 +1,6 @@
-import ExpoPixi from 'expo-pixi';
-import 'pixi.js';
+import ExpoPixi, { PIXI } from 'expo-pixi';
 
-export default (basic = async context => {
+export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
   const app = ExpoPixi.application({
     context,
@@ -36,22 +35,10 @@ export default (basic = async context => {
     .add('house_dds', 'required/assets/compressed/dracula_house_4.dds')
     .add('house_dds_2', 'required/assets/compressed/dracula_house_4.dds?v=2')
     .load(function(loader, resources) {
-      var spr1 = createSprite(
-        resources.house_png.texture,
-        'PNG premultiplied=true, good',
-      );
-      var spr2 = createSprite(
-        resources.house_png_2.texture,
-        'PNG premultiplied=false, bad',
-      );
-      var spr3 = createSprite(
-        resources.house_dds.texture,
-        'DDS premultiplied=true, bad',
-      );
-      var spr4 = createSprite(
-        resources.house_dds_2.texture,
-        'DDS premultiplied=false, good',
-      );
+      var spr1 = createSprite(resources.house_png.texture, 'PNG premultiplied=true, good');
+      var spr2 = createSprite(resources.house_png_2.texture, 'PNG premultiplied=false, bad');
+      var spr3 = createSprite(resources.house_dds.texture, 'DDS premultiplied=true, bad');
+      var spr4 = createSprite(resources.house_dds_2.texture, 'DDS premultiplied=false, good');
 
       resources.house_png.texture.baseTexture.premultipliedAlpha = true;
       resources.house_dds.texture.baseTexture.premultipliedAlpha = true;
@@ -72,4 +59,4 @@ export default (basic = async context => {
 
       app.stage.addChild(spr1, spr2, spr3, spr4);
     });
-});
+};
