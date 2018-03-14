@@ -42,8 +42,8 @@ export default async context => {
       // Mouse & touch events are normalized into
       // the pointer* events for handling different
       // button events.
-      .on('pointerdown', onButtonDown)
-      .on('pointerup', onButtonUp)
+      .on('touchstart', onButtonDown)
+      .on('touchend', onButtonUp)
       .on('pointerupoutside', onButtonUp)
       .on('pointerover', onButtonOver)
       .on('pointerout', onButtonOut);
@@ -75,12 +75,14 @@ export default async context => {
   buttons[4].rotation = Math.PI;
 
   function onButtonDown() {
+    console.log('Down');
     this.isdown = true;
     this.texture = textureButtonDown;
     this.alpha = 1;
   }
 
   function onButtonUp() {
+    console.log('Up');
     this.isdown = false;
     if (this.isOver) {
       this.texture = textureButtonOver;

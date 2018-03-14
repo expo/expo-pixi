@@ -2264,9 +2264,9 @@ expo-asset-utils@^0.0.4-alpha.0:
   version "0.0.4-alpha.0"
   resolved "https://registry.yarnpkg.com/expo-asset-utils/-/expo-asset-utils-0.0.4-alpha.0.tgz#4be816c3c603209cc800d094276b462c966b31d2"
 
-expo-pixi@../../expo-pixi-v0.2.2.alpha-0.tgz:
-  version "0.2.2.alpha-0"
-  resolved "../../expo-pixi-v0.2.2.alpha-0.tgz#f8bcd31e664b04ce3ce2687ed85d7690c61149b1"
+expo-pixi@../../expo-pixi-v0.2.2.alpha-1.tgz:
+  version "0.2.2.alpha-1"
+  resolved "../../expo-pixi-v0.2.2.alpha-1.tgz#6b30c00642ecaa0b91d21675bcd87e6de8623850"
   dependencies:
     "@expo/browser-polyfill" "^0.0.0-alpha.3"
     EventEmitter "^1.0.0"

@@ -7,7 +7,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
     "expo": "^25.0.0",
-    "expo-pixi": "../../expo-pixi-v0.2.2.alpha-0.tgz",
+    "expo-pixi": "../../expo-pixi-v0.2.2.alpha-1.tgz",
     "pixi-compressed-textures": "^1.1.7",
     "pixi-layers": "^0.1.4",
     "pixi-picture": "^1.2.1",
