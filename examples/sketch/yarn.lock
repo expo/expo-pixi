@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@expo/browser-polyfill@^0.0.0-alpha.1":
-  version "0.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-0.0.0-alpha.3.tgz#03f362b76d62aa01f336be5c36bbb64f580522b6"
+"@expo/browser-polyfill@^0.0.0-alpha.3":
+  version "0.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-0.0.0-alpha.4.tgz#90f3112f9c33c65cde010329359ca5e7df2e07a7"
   dependencies:
     EventEmitter "^1.0.0"
     adaptive-bezier-curve "1.0.3"
@@ -149,6 +149,10 @@
 "@pixi/filter-zoom-blur@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@pixi/filter-zoom-blur/-/filter-zoom-blur-2.5.1.tgz#2d8cee1ef9a6e7a32da0ef1f790f2579542ded18"
+
+"@types/pixi.js@^4.5.3":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@types/pixi.js/-/pixi.js-4.7.2.tgz#dd2b56db6e3785c223db5debeb89a935512e22c9"
 
 EventEmitter@^1.0.0:
   version "1.0.0"
@@ -2113,16 +2117,16 @@ expo-asset-utils@^0.0.4-alpha.0:
   version "0.0.4-alpha.0"
   resolved "https://registry.yarnpkg.com/expo-asset-utils/-/expo-asset-utils-0.0.4-alpha.0.tgz#4be816c3c603209cc800d094276b462c966b31d2"
 
-expo-pixi@../../expo-pixi-v0.2.1.tgz:
-  version "0.2.1"
-  resolved "../../expo-pixi-v0.2.1.tgz#43f9d8112488bed5560624c8dab60e252c8f6941"
+expo-pixi@../../expo-pixi-v0.2.2.alpha-1.tgz:
+  version "0.2.2.alpha-1"
+  resolved "../../expo-pixi-v0.2.2.alpha-1.tgz#6b30c00642ecaa0b91d21675bcd87e6de8623850"
   dependencies:
-    "@expo/browser-polyfill" "^0.0.0-alpha.1"
+    "@expo/browser-polyfill" "^0.0.0-alpha.3"
     EventEmitter "^1.0.0"
     expo-asset-utils "^0.0.4-alpha.0"
     path "^0.12.7"
     pixi-filters "*"
-    pixi.js "^4.6.2"
+    pixi.js "^4.7.0"
     url "^0.11.0"
 
 expo@^25.0.0:
@@ -4010,7 +4014,13 @@ pixi-gl-core@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/pixi-gl-core/-/pixi-gl-core-1.1.4.tgz#8b4b5c433b31e419bc379dc565ce1b835a91b372"
 
-pixi.js@^4.6.2:
+pixi-spine@^1.5.11:
+  version "1.5.13"
+  resolved "https://registry.yarnpkg.com/pixi-spine/-/pixi-spine-1.5.13.tgz#0b4e79651684ce91b76740e1b00fba61aca8f85f"
+  dependencies:
+    "@types/pixi.js" "^4.5.3"
+
+pixi.js@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/pixi.js/-/pixi.js-4.7.0.tgz#2b9480758eeadcaa9f143442ad85924adf4cc932"
   dependencies:

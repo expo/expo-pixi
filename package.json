@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "0.2.2.alpha-0",
+  "version": "0.2.2.alpha-1",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -53,6 +53,7 @@
     "expo-asset-utils": "^0.0.4-alpha.0",
     "path": "^0.12.7",
     "pixi-filters": "*",
+    "pixi-spine": "^1.5.11",
     "pixi.js": "^4.7.0",
     "url": "^0.11.0"
   },

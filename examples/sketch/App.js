@@ -1,7 +1,7 @@
 import Expo from 'expo';
 import * as ExpoPixi from 'expo-pixi';
 import React, { Component } from 'react';
-import { Image, Platform, AppState, StyleSheet, View } from 'react-native';
+import { Image, Button, Platform, AppState, StyleSheet, View } from 'react-native';
 
 const isAndroid = Platform.OS === 'android';
 function uuidv4() {
@@ -70,17 +70,27 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ExpoPixi.Sketch
-          ref={ref => (this.sketch = ref)}
-          style={styles.sketch}
-          strokeColor={this.state.strokeColor}
-          strokeWidth={this.state.strokeWidth}
-          strokeAlpha={1}
-          onChange={this.onChangeAsync}
-          onReady={this.onReady}
-          initialLines={this.state.lines}
+        <View style={styles.container}>
+          <ExpoPixi.Sketch
+            ref={ref => (this.sketch = ref)}
+            style={styles.sketch}
+            strokeColor={this.state.strokeColor}
+            strokeWidth={this.state.strokeWidth}
+            strokeAlpha={1}
+            onChange={this.onChangeAsync}
+            onReady={this.onReady}
+            initialLines={this.state.lines}
+          />
+          <Image style={styles.image} source={this.state.image} />
+        </View>
+        <Button
+          color={'blue'}
+          title="undo"
+          style={styles.button}
+          onPress={() => {
+            this.sketch.undo();
+          }}
         />
-        <Image style={styles.image} source={this.state.image} />
       </View>
     );
   }
@@ -96,5 +106,14 @@ const styles = StyleSheet.create({
   image: {
     height: '50%',
     backgroundColor: '#E44262',
+  },
+  button: {
+    // position: 'absolute',
+    // bottom: 8,
+    // left: 8,
+    zIndex: 1,
+    padding: 12,
+    minWidth: 56,
+    minHeight: 48,
   },
 });

@@ -1,5 +1,4 @@
-import ExpoPixi, { PIXI } from 'expo-pixi';
-require('pixi-spine');
+import ExpoPixi from 'expo-pixi';
 
 export default async context => {
   //http://pixijs.io/examples/#/basics/basic.js
@@ -9,9 +8,6 @@ export default async context => {
 
   app.stop();
 
-  // load spine data
-  PIXI.loader.add('pixie', 'required/assets/spine/Pixie.json').load(onAssetsLoaded);
-
   var postition = 0,
     background,
     background2,
@@ -19,42 +15,6 @@ export default async context => {
     foreground2;
 
   app.stage.interactive = true;
-
-  async function onAssetsLoaded(loader, res) {
-    background = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
-    background2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
-    foreground = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
-    foreground2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
-
-    foreground.y = foreground2.y = 640 - foreground2.height;
-
-    app.stage.addChild(background, background2, foreground, foreground2);
-
-    var pixie = new PIXI.spine.Spine(res.pixie.spineData);
-
-    var scale = 0.3;
-
-    pixie.x = 1024 / 3;
-    pixie.y = 500;
-
-    pixie.scale.x = pixie.scale.y = scale;
-
-    app.stage.addChild(pixie);
-
-    pixie.stateData.setMix('running', 'jump', 0.2);
-    pixie.stateData.setMix('jump', 'running', 0.4);
-
-    pixie.state.setAnimation(0, 'running', true);
-
-    app.stage.on('pointerdown', onTouchStart);
-
-    function onTouchStart() {
-      pixie.state.setAnimation(0, 'jump', false);
-      pixie.state.addAnimation(0, 'running', true, 0);
-    }
-
-    app.start();
-  }
 
   app.ticker.add(function() {
     postition += 10;
@@ -87,4 +47,42 @@ export default async context => {
     }
     foreground2.x -= 1286;
   });
+
+  background = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
+  background2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_BGtile.jpg'));
+  foreground = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
+  foreground2 = await ExpoPixi.spriteAsync(require('../../assets/pixi/iP4_ground.png'));
+
+  foreground.y = foreground2.y = 640 - foreground2.height;
+
+  app.stage.addChild(background, background2, foreground, foreground2);
+
+  const pixie = await ExpoPixi.spineAsync({
+    json: require('../../assets/pixi/Pixie.json'),
+    atlas: require('../../assets/pixi/Pixie.atlas'),
+    assetProvider: {
+      'Pixie.png': require('../../assets/pixi/Pixie.png'),
+    },
+  });
+
+  var scale = 0.3;
+
+  pixie.x = 1024 / 3;
+  pixie.y = 500;
+
+  pixie.scale.x = pixie.scale.y = scale;
+
+  app.stage.addChild(pixie);
+
+  pixie.stateData.setMix('running', 'jump', 0.2);
+  pixie.stateData.setMix('jump', 'running', 0.4);
+
+  pixie.state.setAnimation(0, 'running', true);
+
+  global.document.addEventListener('touchstart', function() {
+    pixie.state.setAnimation(0, 'jump', false);
+    pixie.state.addAnimation(0, 'running', true, 0);
+  });
+
+  app.start();
 };

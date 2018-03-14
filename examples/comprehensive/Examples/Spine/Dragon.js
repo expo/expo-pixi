@@ -1,20 +1,15 @@
-import Expo, { Asset } from 'expo';
 import ExpoPixi, { PIXI } from 'expo-pixi';
-import AssetUtils from 'expo-asset-utils';
 
 export default async context => {
-  console.log(!!PIXI.spine);
-
   // Custom Expo loading spine
-  const assets = {
-    'dragon.png': require('../../assets/pixi/dragon.png'),
-    'dragon2.png': require('../../assets/pixi/dragon2.png'),
-  };
 
   const dragon = await ExpoPixi.spineAsync({
     json: require('../../assets/pixi/dragon.json'),
     atlas: require('../../assets/pixi/dragon.atlas'),
-    assetProvider: assets,
+    assetProvider: {
+      'dragon.png': require('../../assets/pixi/dragon.png'),
+      'dragon2.png': require('../../assets/pixi/dragon2.png'),
+    },
   });
 
   const app = ExpoPixi.application({
