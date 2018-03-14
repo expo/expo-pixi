@@ -7,12 +7,11 @@
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
     "expo": "^25.0.0",
-    "expo-pixi": "../../expo-pixi-v0.2.2.alpha-1.tgz",
+    "expo-pixi": "../../expo-pixi-v0.2.3.tgz",
     "pixi-compressed-textures": "^1.1.7",
     "pixi-layers": "^0.1.4",
     "pixi-picture": "^1.2.1",
     "pixi-projection": "^0.1.9",
-    "pixi-spine": "^1.5.11",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
     "react-navigation": "^1.0.0-beta.22"

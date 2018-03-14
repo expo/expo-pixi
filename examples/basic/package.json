@@ -7,7 +7,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
     "expo": "^25.0.0",
-    "expo-pixi": "../../expo-pixi-v0.2.1.tgz",
+    "expo-pixi": "../../expo-pixi-v0.2.3.tgz",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
   },
