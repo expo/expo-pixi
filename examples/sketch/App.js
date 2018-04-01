@@ -1,7 +1,7 @@
 import Expo from 'expo';
 import * as ExpoPixi from 'expo-pixi';
 import React, { Component } from 'react';
-import { Image, Button, Platform, AppState, StyleSheet, View } from 'react-native';
+import { Image, Button, Platform, AppState, StyleSheet, Text, View } from 'react-native';
 
 const isAndroid = Platform.OS === 'android';
 function uuidv4() {
@@ -47,15 +47,9 @@ export default class App extends Component {
     AppState.removeEventListener('change', this.handleAppStateChangeAsync);
   }
 
-  onChangeAsync = async ({ width, height }) => {
-    const options = {
-      format: 'png',
-      quality: 0.1,
-      result: 'file',
-      height,
-      width,
-    };
-    const uri = await Expo.takeSnapshotAsync(this.sketch, options);
+  onChangeAsync = async () => {
+    const { uri } = await this.sketch.takeSnapshotAsync();
+
     this.setState({
       image: { uri },
       strokeWidth: Math.random() * 30 + 10,
@@ -71,17 +65,27 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <ExpoPixi.Sketch
-            ref={ref => (this.sketch = ref)}
-            style={styles.sketch}
-            strokeColor={this.state.strokeColor}
-            strokeWidth={this.state.strokeWidth}
-            strokeAlpha={1}
-            onChange={this.onChangeAsync}
-            onReady={this.onReady}
-            initialLines={this.state.lines}
-          />
-          <Image style={styles.image} source={this.state.image} />
+          <View style={styles.sketchContainer}>
+            <ExpoPixi.Sketch
+              ref={ref => (this.sketch = ref)}
+              style={styles.sketch}
+              strokeColor={this.state.strokeColor}
+              strokeWidth={this.state.strokeWidth}
+              strokeAlpha={1}
+              onChange={this.onChangeAsync}
+              onReady={this.onReady}
+              initialLines={this.state.lines}
+            />
+            <View style={styles.label}>
+              <Text>Canvas - draw here</Text>
+            </View>
+          </View>
+          <View style={styles.imageContainer}>
+            <View style={styles.label}>
+              <Text>Snapshot</Text>
+            </View>
+            <Image style={styles.image} source={this.state.image} />
+          </View>
         </View>
         <Button
           color={'blue'}
@@ -101,11 +105,23 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   sketch: {
+    flex: 1,
+  },
+  sketchContainer: {
     height: '50%',
   },
   image: {
+    flex: 1,
+  },
+  imageContainer: {
     height: '50%',
-    backgroundColor: '#E44262',
+    borderTopWidth: 4,
+    borderTopColor: '#E44262',
+  },
+  label: {
+    width: '100%',
+    padding: 5,
+    alignItems: 'center',
   },
   button: {
     // position: 'absolute',

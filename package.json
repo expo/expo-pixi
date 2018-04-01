@@ -4,7 +4,9 @@
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -39,17 +41,20 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": ["lint"],
+  "pre-push": [
+    "lint"
+  ],
   "scripts": {
     "prepush": "npm run lint",
-
     "lint:examples": "eslint examples/",
     "lint": "eslint lib/",
     "lint:fix": "eslint lib/ --fix"
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.0-alpha.3",
-    "EventEmitter": "^1.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-expo": "^4.0.0",
+    "babel-preset-stage-2": "^6.24.1",
     "expo-asset-utils": "^0.0.4-alpha.0",
     "path": "^0.12.7",
     "pixi-filters": "*",
