@@ -2,7 +2,7 @@
 
 Tools to use [Pixi.js](http://www.pixijs.com/) in Expo!
 
-To get started: `yarn add expo-pixi pixi.js url path` in your Expo project and import it with
+To get started: `yarn add expo-pixi pixi.js url path expo-asset-utils pixi-filters EventEmitter` in your Expo project and import it with
 `import ExpoPixi from 'expo-pixi';`.
 
 ## Functions
