@@ -1,5 +1,7 @@
 # expo-pixi
 
+> This lib uses @expo/browser-polyfill please take a look at this [issue with v26](https://github.com/expo/browser-polyfill#bug). You will need to run `rm -rf node_modules/gl-matrix/.babelrc` after running `yarn` or `npm install`
+
 Tools to use [Pixi.js](http://www.pixijs.com/) in Expo!
 
 To get started: `yarn add expo-pixi pixi.js url path` in your Expo project and import it with
