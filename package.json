@@ -1,12 +1,10 @@
 {
   "name": "expo-pixi",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -41,9 +39,7 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": [
-    "lint"
-  ],
+  "pre-push": ["lint"],
   "scripts": {
     "prepush": "npm run lint",
     "lint:examples": "eslint examples/",
