@@ -1,0 +1,55 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js
+
+PATH: 
+  /Users/admin/Devel/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/admin/.composer/vendor/bin:/Users/admin/Devel/google-cloud-sdk/bin:/Users/admin/Library/Android/sdk/tools:/Users/admin/Library/Android/sdk/platform-tools:/Users/admin:/Users/admin/.config/yarn/global/node_modules/.bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  9.11.2
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "signature",
+    "version": "0.2.2",
+    "description": "expo-pixi signature example",
+    "author": "support@expo.io",
+    "private": true,
+    "main": "node_modules/expo/AppEntry.js",
+    "dependencies": {
+      "expo": "^28.0.0",
+      "expo-asset-utils": "^0.0.2",
+      "expo-pixi": "file:../../expo-pixi-v0.3.0.tgz",
+      "react": "16.3.1",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz"
+    },
+    "devDependencies": {
+      "eslint": "^4.9.0",
+      "eslint-config-universe": "^1.0.6",
+      "prettier": "^1.7.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/expo: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:123716:19)
+      at Object.onceWrapper (events.js:272:13)
+      at ClientRequest.emit (events.js:180:13)
+      at TLSSocket.emitTimeout (_http_client.js:703:34)
+      at Object.onceWrapper (events.js:272:13)
+      at TLSSocket.emit (events.js:180:13)
+      at TLSSocket.Socket._onTimeout (net.js:396:8)
+      at ontimeout (timers.js:466:11)
+      at tryOnTimeout (timers.js:304:5)
+      at Timer.listOnTimeout (timers.js:267:5)
