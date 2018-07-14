@@ -51,10 +51,7 @@
     "lint:fix": "eslint lib/ --fix"
   },
   "dependencies": {
-    "@expo/browser-polyfill": "^0.0.0-alpha.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-expo": "^4.0.0",
-    "babel-preset-stage-2": "^6.24.1",
+    "@expo/browser-polyfill": "^0.0.0-alpha.8",
     "expo-asset-utils": "^0.0.4-alpha.0",
     "fbemitter": "2.1.1",
     "gl-matrix": "2.6.1",
@@ -68,12 +65,13 @@
     "react": "^16.2.0"
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
+    "babel-preset-expo": "^4.0.0",
+    "eslint": "^5.1.0",
     "eslint-config-universe": "^1.0.6",
     "eslint-plugin-jest": "^21.2.0",
     "husky": "^0.14.3",
-    "jest": "^22.4.2",
-    "jest-expo": "^25.1.0",
+    "jest": "^23.4.1",
+    "jest-expo": "^28.0.0",
     "prettier": "^1.7.4"
   }
 }
