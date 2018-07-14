@@ -1,10 +1,12 @@
 {
   "name": "expo-pixi",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -39,7 +41,9 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": ["lint"],
+  "pre-push": [
+    "lint"
+  ],
   "scripts": {
     "prepush": "npm run lint",
     "lint:examples": "eslint examples/",
@@ -52,6 +56,8 @@
     "babel-preset-expo": "^4.0.0",
     "babel-preset-stage-2": "^6.24.1",
     "expo-asset-utils": "^0.0.4-alpha.0",
+    "fbemitter": "2.1.1",
+    "gl-matrix": "2.6.1",
     "path": "^0.12.7",
     "pixi-filters": "*",
     "pixi-spine": "^1.5.11",
