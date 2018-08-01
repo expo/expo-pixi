@@ -52,7 +52,10 @@
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.0-alpha.8",
+    "expo-asset": "^1.0.0",
     "expo-asset-utils": "^0.0.4-alpha.0",
+    "expo-file-system": "^1.0.0",
+    "expo-gl": "^1.0.0",
     "fbemitter": "2.1.1",
     "gl-matrix": "2.6.1",
     "path": "^0.12.7",
