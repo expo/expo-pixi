@@ -1,12 +1,10 @@
 {
   "name": "expo-pixi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "main": "lib/index.js",
   "homepage": "https://github.com/expo/expo-pixi#readme",
   "repository": {
@@ -41,9 +39,7 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": [
-    "lint"
-  ],
+  "pre-push": ["lint"],
   "scripts": {
     "prepush": "npm run lint",
     "lint:examples": "eslint examples/",
@@ -51,9 +47,9 @@
     "lint:fix": "eslint lib/ --fix"
   },
   "dependencies": {
-    "@expo/browser-polyfill": "^0.0.0-alpha.8",
+    "@expo/browser-polyfill": "^0.0.1-alpha.1",
     "expo-asset": "^1.0.0",
-    "expo-asset-utils": "^0.0.4-alpha.0",
+    "expo-asset-utils": "^0.0.5",
     "expo-file-system": "^1.0.0",
     "expo-gl": "^1.0.0",
     "fbemitter": "2.1.1",
