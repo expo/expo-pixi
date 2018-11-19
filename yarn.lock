@@ -71,9 +71,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@expo/browser-polyfill@^0.0.0-alpha.8":
-  version "0.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-0.0.0-alpha.10.tgz#5647e0ef05a0a188cc16ff190b2a63912e13b57d"
+"@expo/browser-polyfill@^0.0.1-alpha.1":
+  version "0.0.1-alpha.3"
+  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-0.0.1-alpha.3.tgz#2300b1705ae16e82516a563024e73dd31538d9c4"
+  integrity sha512-EPoxgpnRv/la0jQcVtbTiX3BmOzWpp+/aMkYhNmaeJo3xYEnpuhpUfbbadt1hPkySs7lseHT2FM8yTTptN+CcA==
   dependencies:
     adaptive-bezier-curve "1.0.3"
     adaptive-quadratic-curve "1.0.2"
@@ -81,7 +82,6 @@
     earcut "2.1.3"
     extrude-polyline "1.0.6"
     fbemitter "^2.1.1"
-    gl-matrix "2.6.1"
     react-native-console-time-polyfill "^0.0.6"
     string-format "2.0.0"
     text-encoding "^0.6.4"
@@ -1815,9 +1815,79 @@ expect@^23.4.0:
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
 
-expo-asset-utils@^0.0.4-alpha.0:
-  version "0.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/expo-asset-utils/-/expo-asset-utils-0.0.4-alpha.0.tgz#4be816c3c603209cc800d094276b462c966b31d2"
+expo-asset-utils@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/expo-asset-utils/-/expo-asset-utils-0.0.5.tgz#81426e89dbe4f9e0da3aea457bbb1a243de4b1d7"
+  integrity sha512-a0mSUO4ASB1dvCHcvRwKdaupEBgsm9J4FIaZAsLeYzhhMZ/8nMEqtaLUnTUObzTKNM3cyMg2cYShvFtnASAYuA==
+  dependencies:
+    expo-asset "^1.0.0"
+    expo-file-system "^1.0.0"
+
+expo-asset@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-1.1.1.tgz#f1957b39a120bd9177f1fad9b8e2a20dd3746e86"
+  integrity sha512-Kk/Hjxj4/23k9GP5PonK7Ot6qAFzitKc9oEN/bOZubk4jMMzyzlealjSq2KiMbKVjcT1xMWTJd1df9HViuiZ9w==
+  dependencies:
+    expo-core "~1.2.0"
+    uri-parser "^1.0.1"
+    url-join "^4.0.0"
+
+expo-asset@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-1.0.2.tgz#4cc477679ce15521eeeced886f0718c3b099bc6c"
+  integrity sha512-RGSuzgSO30qhnfYIlnM+fiBT1bKBma8j1Tvap1KZ5DmjWTKkxq/zSYw+FvEkKhdVUO2BtZkLWT9h+gicQ9CAFw==
+  dependencies:
+    expo-core "~1.0.1"
+
+expo-camera-interface@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-camera-interface/-/expo-camera-interface-1.1.0.tgz#60b1e9c0a7ce68726929cd1504a61caa0b81ff65"
+  integrity sha512-qHgGc/JVfFsSFFIsdbnTo6o6kV0sYQ3TuNxLXoWRUGq8/h2U8R4dExPlugSw698Wg9MUtG0mpez1ZcjwWkO/Sg==
+  dependencies:
+    expo-core "~1.2.0"
+
+expo-core@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/expo-core/-/expo-core-1.0.1.tgz#f71c43c1d477e79b259507ff708f487603eed5df"
+  integrity sha512-LNGL4WU1ZO8SVVrwM/ObTH1jagZirWQipviGKDq/D0ndFy64fy8y41dXwxsmXXVyxZvmQmwCTYrC8uMJ0VRzPA==
+
+expo-core@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/expo-core/-/expo-core-1.2.0.tgz#c8fecf18b36a5b583bcb69a0227d4a6e45b56f17"
+  integrity sha512-EbfgL/NPIROzY+Vvmuo2teUqSo8FEdFSZm3dyUcCTEV8jXioTCyJNpsH3G3cTI2U7nxn84SxoB6BvEzWdQyu4Q==
+
+expo-file-system-interface@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-file-system-interface/-/expo-file-system-interface-1.1.0.tgz#167fc9d11992b9024ab990a1e90ed4c110f8cfb0"
+  integrity sha512-16iEsif9o7w2OeT8zyi7yf0KioHio0QmyCH73FM6FhbNxkoQznrlKWLkMafcmaQdBShFWATKer3/21qlaeFqCQ==
+  dependencies:
+    expo-core "~1.2.0"
+
+expo-file-system@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-1.1.0.tgz#613bffc73974beca494e62323282b6b05ae374e0"
+  integrity sha512-JQUZ0S2tpDsUTBeW0utWth9KzQxz71AnULW+nrhsTzRNdtCrDD4JlFB2avVWjvUUYzRhHWTVIoI0evHR6K0o9w==
+  dependencies:
+    expo-core "~1.2.0"
+    expo-file-system-interface "~1.1.0"
+    uuid-js "^0.7.5"
+
+expo-gl-cpp@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-gl-cpp/-/expo-gl-cpp-1.1.0.tgz#b258a02e8d6f438e1f11201a9f09ec24472f5ee7"
+  integrity sha512-4LElMPFaIwp5EQIqmfccb6Bk9RixLijN6A/T70ma3kt+MUGW6SzWLzexIWsArDWizU9my+anuQ0dYzZcVtBQ9A==
+  dependencies:
+    expo-core "~1.2.0"
+
+expo-gl@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-gl/-/expo-gl-1.1.0.tgz#02d67a0b02cc492e4ab387362b271765cfa4625f"
+  integrity sha512-7HPWe8STXHurj3jQNJPcrxKhXyAL/ptSSNtNmVU5j1OqHQncGg9VYrg3QORKqcO6YPWZFlbW4faXRQE2HHVumA==
+  dependencies:
+    expo-camera-interface "~1.1.0"
+    expo-core "~1.2.0"
+    expo-file-system-interface "~1.1.0"
+    expo-gl-cpp "~1.1.0"
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -5008,9 +5078,19 @@ uri-js@^4.2.1:
   dependencies:
     punycode "^2.1.0"
 
+uri-parser@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/uri-parser/-/uri-parser-1.0.1.tgz#3307ebb50f279c11198ad09214bdaf24e29735b2"
+  integrity sha512-TRjjM2M83RD9jIIYttNj7ghUQTKSov+WXZbQIMM8DxY1R1QdJEGWNKKMYCxyeOw1p9re2nQ85usM6dPTVtox1g==
+
 urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
+
+url-join@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-4.0.0.tgz#4d3340e807d3773bda9991f8305acdcc2a665d2a"
+  integrity sha1-TTNA6AfTdzvamZH4MFrNzCpmXSo=
 
 url@^0.11.0:
   version "0.11.0"
@@ -5039,6 +5119,11 @@ util@^0.10.3:
   resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
+
+uuid-js@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/uuid-js/-/uuid-js-0.7.5.tgz#6c886d02a53d2d40dcf25d91a170b4a7b25b94d0"
+  integrity sha1-bIhtAqU9LUDc8l2RoXC0p7JblNA=
 
 uuid@^3.0.0, uuid@^3.1.0:
   version "3.2.1"
