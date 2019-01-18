@@ -33,9 +33,7 @@
     "example": "examples",
     "lib": "lib"
   },
-  "pre-push": ["lint"],
   "scripts": {
-    "prepush": "npm run lint",
     "lint:examples": "eslint examples/",
     "lint": "eslint lib/",
     "lint:fix": "eslint lib/ --fix",
@@ -53,10 +51,7 @@
       "npm run sync:basic; npm run sync:comprehensive; npm run sync:filter; npm run sync:signature; npm run sync:sketch"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"]
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.1-alpha.3",
