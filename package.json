@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -14,10 +14,7 @@
   "bugs": {
     "url": "https://github.com/expo/expo-pixi/issues"
   },
-  "author": {
-    "email": "bacon@expo.io",
-    "name": "Evan Bacon"
-  },
+  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "keywords": [
     "react",
     "native",
@@ -32,9 +29,6 @@
     "pixi.js",
     "sprite"
   ],
-  "eslintConfig": {
-    "extends": "universe/native"
-  },
   "directories": {
     "example": "examples",
     "lib": "lib"
@@ -44,14 +38,28 @@
     "prepush": "npm run lint",
     "lint:examples": "eslint examples/",
     "lint": "eslint lib/",
-    "lint:fix": "eslint lib/ --fix"
+    "lint:fix": "eslint lib/ --fix",
+    "sync:basic":
+      "rsync -rv lib examples/basic/node_modules/expo-pixi/; rsync -rv package.json examples/basic/node_modules/expo-pixi/",
+    "sync:comprehensive":
+      "rsync -rv lib examples/comprehensive/node_modules/expo-pixi/; rsync -rv package.json examples/comprehensive/node_modules/expo-pixi/",
+    "sync:filter":
+      "rsync -rv lib examples/filter-image/node_modules/expo-pixi/; rsync -rv package.json examples/filter-image/node_modules/expo-pixi/",
+    "sync:signature":
+      "rsync -rv lib examples/signature/node_modules/expo-pixi/; rsync -rv package.json examples/signature/node_modules/expo-pixi/",
+    "sync:sketch":
+      "rsync -rv lib examples/sketch/node_modules/expo-pixi/; rsync -rv package.json examples/sketch/node_modules/expo-pixi/",
+    "sync":
+      "npm run sync:basic; npm run sync:comprehensive; npm run sync:filter; npm run sync:signature; npm run sync:sketch"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
-    "@expo/browser-polyfill": "^0.0.1-alpha.1",
-    "expo-asset": "1.1.1",
-    "expo-asset-utils": "^0.0.5",
-    "expo-file-system": "^1.0.0",
-    "expo-gl": "^1.0.0",
+    "@expo/browser-polyfill": "^0.0.1-alpha.3",
     "fbemitter": "2.1.1",
     "gl-matrix": "2.6.1",
     "path": "^0.12.7",
@@ -61,7 +69,8 @@
     "url": "^0.11.0"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "expo-asset-utils": "^1.0.0",
+    "expo-gl": "~2.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^4.0.0",
@@ -71,6 +80,28 @@
     "husky": "^0.14.3",
     "jest": "^23.4.1",
     "jest-expo": "^28.0.0",
-    "prettier": "^1.7.4"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^22.4.1",
+    "babel-preset-react-native": "^2.1.0",
+    "codecov": "^2.2.0",
+    "conventional-changelog-cli": "^2.0.5",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.1.0",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.12.1",
+    "prettier-eslint": "^8.8.1",
+    "react": "16.2.0",
+    "react-native": "^0.52.0",
+    "react-native-vector-icons": "^4.2.0",
+    "react-test-renderer": "^16.0.0",
+    "release-it": "^7.6.1"
+  },
+  "eslintConfig": {
+    "extends": "expo"
   }
 }

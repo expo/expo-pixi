@@ -5,9 +5,78 @@ Tools to use [Pixi.js](http://www.pixijs.com/) in Expo!
 To get started: `yarn add expo-pixi` in your Expo project and import it with
 `import ExpoPixi from 'expo-pixi';`.
 
+
+## Side-Effects
+
+To use Pixi.js with Expo & React Native you will want to import a modified version of Pixi.js like so:
+
+```js
+
+// ✅
+import { PIXI } from 'expo-pixi';
+
+// ❌
+import * as PIXI from 'pixi.js';
+
+```
+
+Now you can create a new Application the way you would on the web, but be sure to pass in a `WebGLRenderingContext`.
+
+```js
+
+// ✅
+const app = new PIXI.Application({ context });
+
+// ❌
+const app = ExpoPIXI.application({ context });
+
+```
+
+Finally, because of the way React Native currently works you must load in assets asynchronously.
+
+```js
+
+/*
+ * Accepts: 
+ * - Expo.Asset: import { Asset } from 'expo-asset'; Asset.fromModule( ... );
+ * - URL (with file extension): 'http://i.imgur.com/uwrbErh.png'
+ * - Static Resource: require('./icon.png')
+ */
+
+// ✅
+const sprite = await PIXI.Sprite.fromExpoAsync('http://i.imgur.com/uwrbErh.png');
+
+// OR 
+
+const texture = await PIXI.Texture.fromExpoAsync('http://i.imgur.com/uwrbErh.png');
+
+// ❌
+const sprite = await ExpoPIXI.spriteAsync('http://i.imgur.com/uwrbErh.png');
+
+// OR 
+
+const texture = await ExpoPIXI.textureAsync('http://i.imgur.com/uwrbErh.png');
+```
+
+Using web syntax will return a `Promise`, and throw a warning. It's bad practice, but if the asset is loaded already, this will work without throwing a warning.
+
+```js
+const sprite = await PIXI.Sprite.from(require('./icon.png'));
+
+// > console.warning(PIXI.Sprite.from(asset: ${typeof asset}) is not supported. Returning a Promise!);
+
+// OR 
+
+const texture = await PIXI.Texture.from(require('./icon.png'));
+
+// > console.warning(PIXI.Texture.from(asset: ${typeof asset}) is not supported. Returning a Promise!);
+```
+
 ## Functions
 
 ### `ExpoPixi.application(props): PIXI.Application`
+
+> Deprecated: Use `new PIXI.Application({ context });`
 
 A helper function to create a `PIXI.Application` from a WebGL context.
 EXGL knows to end a frame when the function: `endFrameEXP` is called on the GL context.
@@ -18,7 +87,11 @@ EXGL knows to end a frame when the function: `endFrameEXP` is called on the GL c
 
 ### `ExpoPixi.textureAsync(resource: any): Promise`
 
+> Deprecated: Use `PIXI.Texture.fromExpoAsync(resource);`
+
 ### `ExpoPixi.spriteAsync(resource: any): Promise`
+
+> Deprecated: Use `PIXI.Sprite.fromExpoAsync(resource);`
 
 a helper function to resolve the asset passed in.
 `textureAsync` accepts:
@@ -35,7 +108,11 @@ You cannot send in relative string paths as Metro Bundler looks for static resou
 
 ### `ExpoPixi.sprite({ localUri: string, width: number, height: number }): PIXI.Sprite`
 
+> Deprecated: Use `PIXI.Sprite.from(resource);`
+
 ### `ExpoPixi.texture({ localUri: string, width: number, height: number }): PIXI.Texture`
+
+> Deprecated: Use `PIXI.Texture.from(resource);`
 
 Pixi.js does a type check so we wrap our asset in a `HTMLImageElement` shim.
 
@@ -76,14 +153,14 @@ A Image component that uses PIXI.Filter
 ```js
 import React from 'react';
 import Expo from 'expo';
-import ExpoPixi from 'expo-pixi';
+import { PIXI } from 'expo-pixi';
 
 export default () => (
   <Expo.GLView
     style={{ flex: 1 }}
     onContextCreate={async context => {
-      const app = ExpoPixi.application({ context });
-      const sprite = await ExpoPixi.spriteAsync(
+      const app = new PIXI.Application({ context });
+      const sprite = await PIXI.Sprite.fromExpoAsync(
         'http://i.imgur.com/uwrbErh.png',
       );
       app.stage.addChild(sprite);
