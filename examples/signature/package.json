@@ -6,11 +6,10 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "^28.0.0",
-    "expo-asset-utils": "^0.0.2",
+    "expo": "^32.0.0",
     "expo-pixi": "file:../../expo-pixi-v0.3.0.tgz",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz"
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
     "eslint": "^4.9.0",

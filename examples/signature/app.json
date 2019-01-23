@@ -3,7 +3,7 @@
     "name": "signature",
     "description": "expo-pixi signature example",
     "slug": "expo-pixi-signature",
-    "sdkVersion": "28.0.0",
+    "sdkVersion": "32.0.0",
     "version": "1.0.0",
     "primaryColor": "#E44262",
     "privacy": "public",

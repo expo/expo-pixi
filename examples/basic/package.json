@@ -1,15 +1,15 @@
 {
   "name": "basic",
-  "version": "0.2.1",
+  "version": "32.0.0",
   "description": "expo-pixi basic example",
   "author": "support@expo.io",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "^25.0.0",
+    "expo": "^32.0.0",
     "expo-pixi": "../../expo-pixi-v0.2.3.tgz",
-    "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
