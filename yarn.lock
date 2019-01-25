@@ -7373,7 +7373,7 @@ pixi-spine@^1.5.11:
   dependencies:
     "@types/pixi.js" "^4.8.0"
 
-pixi.js@^4.7.0:
+pixi.js@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/pixi.js/-/pixi.js-4.8.5.tgz#33eef7d1440f38b0057908121c28f93ea7c5b405"
   integrity sha512-eYGvuzIOAOepoFDHu3GmvRqM2tJ/IBwHnfxB6BxGxDOQOaNfWMT9LA5IlUY9K3YEnEd3YtD0Nsx5aRxCyzYQeQ==
