@@ -6,14 +6,18 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "^32.0.0",
-    "expo-pixi": "../../expo-pixi-v0.2.3.tgz",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+    "expo": "^33.0.0-alpha.web.1",
+    "expo-asset-utils": "^1.1.0",
+    "expo-pixi": "../../expo-pixi-v1.1.0.tgz",
+    "react": "16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-web": "^0.11.2"
   },
   "devDependencies": {
-    "eslint": "^4.9.0",
-    "eslint-config-universe": "^1.0.6",
-    "prettier": "^1.7.4"
+    "babel-preset-expo": "^5.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-universe": "^1.0.7",
+    "prettier": "^1.17.0"
   }
 }
