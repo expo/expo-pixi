@@ -17,8 +17,8 @@
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "babel-preset-expo": "^8.0.0",
-    "eslint": "^4.9.0",
-    "eslint-config-universe": "^1.0.6",
-    "prettier": "^1.7.4"
+    "eslint": "^5.16.0",
+    "eslint-config-universe": "^1.0.7",
+    "prettier": "^1.19.1"
   }
 }
