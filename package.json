@@ -57,7 +57,7 @@
     "@expo/browser-polyfill": "^0.1.0",
     "fbemitter": "2.1.1",
     "path": "^0.12.7",
-    "pixi-filters": "*",
+    "pixi-filters": "2.7.1",
     "pixi-spine": "^1.5.11",
     "pixi.js": "^4.7.0",
     "expo-asset-utils": "^1.1.0",
