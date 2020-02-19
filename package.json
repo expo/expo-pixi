@@ -79,7 +79,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^22.4.1",
     "babel-preset-react-native": "^2.1.0",
-    "codecov": "^2.2.0",
+    "codecov": "^3.6.5",
     "conventional-changelog-cli": "^2.0.5",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
