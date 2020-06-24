@@ -3,7 +3,7 @@
     "name": "sketch",
     "description": "expo-pixi sketch example",
     "slug": "expo-pixi-sketch",
-    "sdkVersion": "26.0.0",
+    "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "primaryColor": "#E44262",
     "privacy": "public",

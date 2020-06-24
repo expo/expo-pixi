@@ -55,19 +55,20 @@
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.1.0",
+    "expo-asset-utils": "^1.1.0",
     "fbemitter": "2.1.1",
     "path": "^0.12.7",
     "pixi-filters": "*",
     "pixi-spine": "^1.5.11",
     "pixi.js": "^4.7.0",
-    "expo-asset-utils": "^1.1.0",
     "url": "^0.11.0"
   },
   "peerDependencies": {
-    "expo-gl": "~4.0.0"
+    "expo-gl": "~8.0.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1",
+    "@babel/core": "^7.7.7",
+    "babel-preset-expo": "^8.0.0",
     "eslint": "^5.1.0",
     "eslint-config-universe": "^1.0.6",
     "eslint-plugin-jest": "^21.2.0",
@@ -87,8 +88,8 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.1.0",
     "lint-staged": "^4.2.1",
-    "prettier": "^1.12.1",
-    "prettier-eslint": "^8.8.1",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
     "react": "^16.2.0",
     "react-native": "^0.52.0",
     "react-native-vector-icons": "^4.2.0",

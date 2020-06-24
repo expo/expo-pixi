@@ -7,7 +7,6 @@
     "version": "1.0.0",
     "primaryColor": "#E44262",
     "icon": "./assets/icon.png",
-    "platforms": ["web", "ios", "android"],
     "loading": {
       "icon": "./assets/icon.png",
       "hideExponentText": false
