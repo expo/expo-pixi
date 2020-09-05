@@ -84,7 +84,7 @@ export default class App extends Component {
     });
 
     this.filters = [
-      new PIXI.filters.ColorReplaceFilter(0x000000, 0xff0000),
+      /*new PIXI.filters.ColorReplaceFilter(0x000000, 0xff0000),
       new PIXI.filters.DotFilter(0.5),
       new PIXI.filters.EmbossFilter(),
       new PIXI.filters.PixelateFilter(),
@@ -103,7 +103,7 @@ export default class App extends Component {
       new PIXI.filters.TwistFilter(400, 4, 20),
       new PIXI.filters.BloomFilter(),
       new PIXI.filters.OutlineFilter(20, 0x00fc00, 1),
-      new PIXI.filters.ZoomBlurFilter(),
+      new PIXI.filters.ZoomBlurFilter(),*/
 
       // new PIXI.filters.AlphaFilter(),
       // new PIXI.filters.AsciiFilter(),
