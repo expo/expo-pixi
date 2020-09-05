@@ -56,7 +56,7 @@ export default class App extends Component {
     index: 0,
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     console.log('pixi filters', PIXI.filters);
 
     const filter = filters => {
