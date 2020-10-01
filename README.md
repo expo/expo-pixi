@@ -148,25 +148,74 @@ A Image component that uses PIXI.Filter
 
 ## Example
 
-**[Snack](https://snack.expo.io/@bacon/base-pixi.js)**
+### ExpoPixi.Sketch
 
-```js
+#### Basic usage [(Snack)](https://snack.expo.io/@unexpectederr/expo-pixi-with-react-hooks)
+
+```react
 import React from 'react';
-import Expo from 'expo';
-import { PIXI } from 'expo-pixi';
+import ExpoPixi from 'expo-pixi';
 
-export default () => (
-  <Expo.GLView
-    style={{ flex: 1 }}
-    onContextCreate={async context => {
-      const app = new PIXI.Application({ context });
-      const sprite = await PIXI.Sprite.fromExpoAsync(
-        'http://i.imgur.com/uwrbErh.png',
-      );
-      app.stage.addChild(sprite);
-    }}
-  />
-);
+const App = (props) => {
+  return(
+      <ExpoPixi.Sketch
+      onChange={() => console.log("Lines changed")}
+      onReady={() => console.log("Canvas ready")}
+      strokeColor="0x555555"
+      strokeWidth={15}
+      strokeAlpha={1} 
+      style={{height: "100%", width: "100%", backgroundColor: "black"}} />
+  )
+}
+
+export default App;
 ```
+
+
+
+#### Capturing image of sketch using React.useRef [(Snack)](https://snack.expo.io/@unexpectederr/expo-pixi-snapshot-with-react.useref)
+
+```react
+import React, { useRef } from 'react';
+import {Button} from "react-native";
+import ExpoPixi from 'expo-pixi';
+
+const App = (props) => {
+  const sketchRef = useRef(null)
+
+  function takeSnapshot() {
+    // Call the takeSnapshotAsync function on the ref attached to the ExpoPixi.Sketch component
+    sketchRef.current.takeSnapshotAsync({format: "png"}).then((data) => {
+      // Do something with the data (update state, save to memory, etc)
+      console.log(data)
+    })
+  }
+
+  return(
+    <>
+      <ExpoPixi.Sketch
+      onChange={() => console.log("Lines changed")}
+      onReady={() => console.log("Canvas ready")}
+      ref={sketchRef}
+      strokeColor="0x555555"
+      strokeWidth={15}
+      strokeAlpha={1} 
+      style={{height: "90%", width: "100%", backgroundColor: "black"}} />
+      <Button title="Take Snapshot" onPress={() => takeSnapshot()}/>
+    </>
+  )
+}
+
+export default App;
+
+```
+
+
+
+
+
+
+
+
 
 [![NPM](https://nodei.co/npm/expo-pixi.png)](https://nodei.co/npm/expo-pixi/)
