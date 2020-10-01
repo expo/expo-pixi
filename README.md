@@ -171,8 +171,6 @@ const App = (props) => {
 export default App;
 ```
 
-
-
 #### Capturing image of sketch using React.useRef [(Snack)](https://snack.expo.io/@unexpectederr/expo-pixi-snapshot-with-react.useref)
 
 ```react
@@ -209,13 +207,5 @@ const App = (props) => {
 export default App;
 
 ```
-
-
-
-
-
-
-
-
 
 [![NPM](https://nodei.co/npm/expo-pixi.png)](https://nodei.co/npm/expo-pixi/)
