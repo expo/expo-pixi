@@ -60,7 +60,7 @@
     "pixi-filters": "*",
     "pixi-spine": "^1.5.11",
     "pixi.js": "^4.7.0",
-    "expo-asset-utils": "^1.1.0",
+    "expo-asset-utils": "^3.0.0",
     "url": "^0.11.0"
   },
   "peerDependencies": {
