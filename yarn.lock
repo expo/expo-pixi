@@ -877,14 +877,15 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@expo/browser-polyfill@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-0.1.0.tgz#225dc667b22f8b247fa11aa961537f3a43c4fe48"
-  integrity sha512-L1Bc7R8F/Q+aiuA2z3s7QKqu5rxxY0ZlDVmB3pxAbB7CqTW3WX5e1e1Qg0Pxm1ZCjNhqgBQhTz9I0Tfaqc4d2g==
+"@expo/browser-polyfill@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/browser-polyfill/-/browser-polyfill-1.0.0.tgz#2d93ae0feb3ccc90b78a98f277f8f8ed8bcbd37d"
+  integrity sha512-hwlfansWtt1F/ZUitu6vrGRF5Th2LhBn2HHPxvz3U/MFxKG5XI4TA6SM1bJW2Q2iR2bsIddzz1nNwcf0Sjg1hA==
   dependencies:
-    expo-2d-context "^0.0.2"
+    expo-2d-context "^0.0.3"
     fbemitter "^2.1.1"
     text-encoding "^0.7.0"
+    uuid "^8.3.2"
     xmldom-qsa "^1.0.3"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
@@ -4390,10 +4391,10 @@ expect@^23.6.0:
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
 
-expo-2d-context@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/expo-2d-context/-/expo-2d-context-0.0.2.tgz#7aeea5b146b3f7091ca7d17fcf7a713024ef82f5"
-  integrity sha512-W4TCuTBXZgvAHhQ15u0fpQiBVw14u4vIDcUv/hk2PBA9a3HYav+1lQp2+dCXLM2DXUjV5T4POY+VlePBWBORhw==
+expo-2d-context@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/expo-2d-context/-/expo-2d-context-0.0.3.tgz#6b307c34993ad9d789ead37b6b5922c7fde8d458"
+  integrity sha512-loO/cIj5owNXv0GJxEQ7Sm1vlGOYoJwHCaf2uiPKG3BZm+gQw6GnDgxN+2WDisNZKLTjnMLUGP1HhBsNnElt6g==
   dependencies:
     adaptive-bezier-curve "1.0.3"
     adaptive-quadratic-curve "1.0.2"
@@ -10252,6 +10253,11 @@ uuid@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
   integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8flags@^2.1.1:
   version "2.1.1"
