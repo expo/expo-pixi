@@ -1,6 +1,6 @@
 {
   "name": "expo-pixi",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "sideEffects": true,
   "description": "Tools for using pixi in Expo",
   "license": "MIT",
