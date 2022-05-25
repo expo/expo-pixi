@@ -1,101 +1,57 @@
 {
   "name": "expo-pixi",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "version": "2.1.1",
   "sideEffects": true,
-  "description": "Tools for using pixi in Expo",
+  "description": "Pixi.js V4 Expo",
   "license": "MIT",
-  "readmeFilename": "README.md",
   "files": [
-    "lib"
+    "src"
   ],
-  "main": "lib/index.js",
-  "homepage": "https://github.com/expo/expo-pixi#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/expo/expo-pixi.git"
-  },
-  "bugs": {
-    "url": "https://github.com/expo/expo-pixi/issues"
-  },
-  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
-  "keywords": [
-    "react",
-    "native",
-    "expo",
-    "exponent",
-    "game",
-    "gl",
-    "graphics",
-    "opengl",
-    "2d",
-    "pixi",
-    "pixi.js",
-    "sprite"
-  ],
-  "directories": {
-    "example": "examples",
-    "lib": "lib"
-  },
   "scripts": {
-    "lint:examples": "eslint examples/",
-    "lint": "eslint lib/",
-    "lint:fix": "eslint lib/ --fix",
-    "sync:basic": "rsync -rv lib examples/basic/node_modules/expo-pixi/; rsync -rv package.json examples/basic/node_modules/expo-pixi/",
-    "sync:comprehensive": "rsync -rv lib examples/comprehensive/node_modules/expo-pixi/; rsync -rv package.json examples/comprehensive/node_modules/expo-pixi/",
-    "sync:filter": "rsync -rv lib examples/filter-image/node_modules/expo-pixi/; rsync -rv package.json examples/filter-image/node_modules/expo-pixi/",
-    "sync:signature": "rsync -rv lib examples/signature/node_modules/expo-pixi/; rsync -rv package.json examples/signature/node_modules/expo-pixi/",
-    "sync:sketch": "rsync -rv lib examples/sketch/node_modules/expo-pixi/; rsync -rv package.json examples/sketch/node_modules/expo-pixi/",
-    "sync": "npm run sync:basic; npm run sync:comprehensive; npm run sync:filter; npm run sync:signature; npm run sync:sketch"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "presync": "npm run build",
+    "sync": "rsync -rv dist example/node_modules/expo-pixi && rsync -rv package.json example/node_modules/expo-pixi",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:unit": "npx jest",
+    "test:lint": "npx eslint ./src"
   },
   "dependencies": {
     "@expo/browser-polyfill": "^1.0.0",
-    "expo-asset-utils": "^3.0.0",
-    "fbemitter": "2.1.1",
-    "path": "^0.12.7",
-    "pixi-filters": "*",
-    "pixi-spine": "^1.5.11",
-    "pixi.js": "^4.7.0",
-    "url": "^0.11.0"
+    "pixi-filters": "2.7.1",
+    "pixi.js": "latest-4.x"
   },
   "peerDependencies": {
-    "expo-gl": "*"
+    "expo-asset": "*",
+    "expo-gl": "*",
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-jest": "^22.4.1",
-    "babel-preset-expo": "^5.1.1",
-    "babel-preset-react-native": "^2.1.0",
-    "codecov": "^3.7.1",
-    "conventional-changelog-cli": "^2.0.5",
-    "eslint": "^5.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-universe": "^1.0.6",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^21.2.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.1.0",
-    "husky": "^0.14.3",
-    "jest": "^23.4.1",
-    "jest-expo": "^28.0.0",
-    "lint-staged": "^4.2.1",
-    "prettier": "^1.12.1",
-    "prettier-eslint": "^8.8.1",
-    "react": "^16.2.0",
-    "react-native": "^0.52.0",
-    "react-native-vector-icons": "^4.2.0",
-    "react-test-renderer": "^16.0.0",
-    "release-it": "^7.6.1"
-  },
-  "eslintConfig": {
-    "extends": "expo"
+    "@babel/core": "^7.18.0",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/pixi.js": "4.8.9",
+    "@types/react-native": "^0.67.7",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "prettier": "^2.6.2",
+    "rollup": "^2.74.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "~4.3.5"
   }
 }
