@@ -35,6 +35,18 @@ export default function Navigation() {
         <Drawer.Group>
           <Drawer.Screen name="TilingSprite" component={TilingSpriteScreen} />
         </Drawer.Group>
+
+        <Drawer.Group>
+          <Drawer.Screen name="Graphics" component={GraphicsScreen} />
+          <Drawer.Screen
+            name="GraphicsAdvanced"
+            component={GraphicsAdvancedScreen}
+          />
+          <Drawer.Screen
+            name="GraphicsDynamic"
+            component={GraphicsDynamicScreen}
+          />
+        </Drawer.Group>
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -559,6 +571,338 @@ function TilingSpriteScreen() {
 
             tilingSprite.tilePosition.x += 1;
             tilingSprite.tilePosition.y += 1;
+          });
+        }}
+      />
+    </View>
+  );
+}
+
+function GraphicsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <GLView
+        style={{ width, height }}
+        onContextCreate={async (context) => {
+          const app = new PIXI.Application({
+            context,
+            width,
+            height,
+            antialias: true,
+          });
+
+          const graphics = new PIXI.Graphics();
+
+          // Rectangle
+          graphics.beginFill(0xde3249);
+          graphics.drawRect(50, 50, 100, 100);
+          graphics.endFill();
+
+          // Rectangle + line style 1
+          graphics.lineStyle(2, 0xfeeb77, 1);
+          graphics.beginFill(0x650a5a);
+          graphics.drawRect(200, 50, 100, 100);
+          graphics.endFill();
+
+          // Rectangle + line style 2
+          graphics.lineStyle(10, 0xffbd01, 1);
+          graphics.beginFill(0xc34288);
+          graphics.drawRect(350, 50, 100, 100);
+          graphics.endFill();
+
+          // Rectangle 2
+          graphics.lineStyle(2, 0xffffff, 1);
+          graphics.beginFill(0xaa4f08);
+          graphics.drawRect(530, 50, 140, 100);
+          graphics.endFill();
+
+          // Circle
+          graphics.lineStyle(0); // draw a circle, set the lineStyle to zero so the circle doesn't have an outline
+          graphics.beginFill(0xde3249, 1);
+          graphics.drawCircle(100, 250, 50);
+          graphics.endFill();
+
+          // Circle + line style 1
+          graphics.lineStyle(2, 0xfeeb77, 1);
+          graphics.beginFill(0x650a5a, 1);
+          graphics.drawCircle(250, 250, 50);
+          graphics.endFill();
+
+          // Circle + line style 2
+          graphics.lineStyle(10, 0xffbd01, 1);
+          graphics.beginFill(0xc34288, 1);
+          graphics.drawCircle(400, 250, 50);
+          graphics.endFill();
+
+          // Ellipse + line style 2
+          graphics.lineStyle(2, 0xffffff, 1);
+          graphics.beginFill(0xaa4f08, 1);
+          graphics.drawEllipse(600, 250, 80, 50);
+          graphics.endFill();
+
+          // draw a shape
+          graphics.beginFill(0xff3300);
+          graphics.lineStyle(4, 0xffd900, 1);
+          graphics.moveTo(50, 350);
+          graphics.lineTo(250, 350);
+          graphics.lineTo(100, 400);
+          graphics.lineTo(50, 350);
+          graphics.endFill();
+
+          // draw a rounded rectangle
+          graphics.lineStyle(2, 0xff00ff, 1);
+          graphics.beginFill(0x650a5a, 0.25);
+          graphics.drawRoundedRect(50, 440, 100, 100, 16);
+          graphics.endFill();
+
+          // draw star
+          graphics.lineStyle(2, 0xffffff);
+          graphics.beginFill(0x35cc5a, 1);
+          graphics.drawStar(360, 370, 5, 50);
+          graphics.endFill();
+
+          // draw star 2
+          graphics.lineStyle(2, 0xffffff);
+          graphics.beginFill(0xffcc5a, 1);
+          graphics.drawStar(280, 510, 7, 50);
+          graphics.endFill();
+
+          // draw star 3
+          graphics.lineStyle(4, 0xffffff);
+          graphics.beginFill(0x55335a, 1);
+          graphics.drawStar(470, 450, 4, 50);
+          graphics.endFill();
+
+          // draw polygon
+          const path = [600, 370, 700, 460, 780, 420, 730, 570, 590, 520];
+
+          graphics.lineStyle(0);
+          graphics.beginFill(0x3500fa, 1);
+          graphics.drawPolygon(path);
+          graphics.endFill();
+
+          app.stage.addChild(graphics);
+        }}
+      />
+    </View>
+  );
+}
+
+function GraphicsAdvancedScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <GLView
+        style={{ width, height }}
+        onContextCreate={async (context) => {
+          const app = new PIXI.Application({
+            context,
+            width,
+            height,
+            antialias: true,
+          });
+
+          const sprite = await PIXI.Sprite.from(
+            require("../assets/bg_rotate.jpg")
+          );
+
+          // // BEZIER CURVE ////
+          // information: https://en.wikipedia.org/wiki/Bézier_curve
+
+          const realPath = new PIXI.Graphics();
+
+          realPath.lineStyle(2, 0xffffff, 1);
+          realPath.moveTo(0, 0);
+          realPath.lineTo(100, 200);
+          realPath.lineTo(200, 200);
+          realPath.lineTo(240, 100);
+
+          realPath.position.x = 50;
+          realPath.position.y = 50;
+
+          app.stage.addChild(realPath);
+
+          const bezier = new PIXI.Graphics();
+
+          bezier.lineStyle(5, 0xaa0000, 1);
+          bezier.bezierCurveTo(100, 200, 200, 200, 240, 100);
+
+          bezier.position.x = 50;
+          bezier.position.y = 50;
+
+          app.stage.addChild(bezier);
+
+          // // BEZIER CURVE 2 ////
+          const realPath2 = new PIXI.Graphics();
+
+          realPath2.lineStyle(2, 0xffffff, 1);
+          realPath2.moveTo(0, 0);
+          realPath2.lineTo(0, -100);
+          realPath2.lineTo(150, 150);
+          realPath2.lineTo(240, 100);
+
+          realPath2.position.x = 320;
+          realPath2.position.y = 150;
+
+          app.stage.addChild(realPath2);
+
+          const bezier2 = new PIXI.Graphics();
+
+          bezier2.lineTextureStyle(10, sprite.texture);
+          bezier2.bezierCurveTo(0, -100, 150, 150, 240, 100);
+
+          bezier2.position.x = 320;
+          bezier2.position.y = 150;
+
+          app.stage.addChild(bezier2);
+
+          // // ARC ////
+          const arc = new PIXI.Graphics();
+
+          arc.lineStyle(5, 0xaa00bb, 1);
+          arc.arc(600, 100, 50, Math.PI, 2 * Math.PI);
+
+          app.stage.addChild(arc);
+
+          // // ARC 2 ////
+          const arc2 = new PIXI.Graphics();
+
+          arc2.lineStyle(6, 0x3333dd, 1);
+          arc2.arc(650, 270, 60, 2 * Math.PI, (3 * Math.PI) / 2);
+
+          app.stage.addChild(arc2);
+
+          // // ARC 3 ////
+          const arc3 = new PIXI.Graphics();
+
+          arc3.lineTextureStyle(20, sprite.texture);
+          arc3.arc(650, 420, 60, 2 * Math.PI, (2.5 * Math.PI) / 2);
+
+          app.stage.addChild(arc3);
+
+          // / Hole ////
+          const rectAndHole = new PIXI.Graphics();
+
+          rectAndHole.beginFill(0x00ff00);
+          rectAndHole.drawRect(350, 350, 150, 150);
+          rectAndHole.beginHole();
+          rectAndHole.drawCircle(375, 375, 25);
+          rectAndHole.drawCircle(425, 425, 25);
+          rectAndHole.drawCircle(475, 475, 25);
+          rectAndHole.endHole();
+          rectAndHole.endFill();
+
+          app.stage.addChild(rectAndHole);
+
+          // // Line Texture Style ////
+          const beatifulRect = new PIXI.Graphics();
+
+          beatifulRect.lineTextureStyle(20, sprite.texture);
+          beatifulRect.beginFill(0xff0000);
+          beatifulRect.drawRect(80, 350, 150, 150);
+          beatifulRect.endFill();
+
+          app.stage.addChild(beatifulRect);
+        }}
+      />
+    </View>
+  );
+}
+
+function GraphicsDynamicScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <GLView
+        style={{ width, height }}
+        onContextCreate={async (context) => {
+          const app = new PIXI.Application({
+            context,
+            width,
+            height,
+            antialias: true,
+          });
+
+          const graphics = new PIXI.Graphics();
+
+          // set a fill and line style
+          graphics.beginFill(0xff3300);
+          graphics.lineStyle(10, 0xffd900, 1);
+
+          // draw a shape
+          graphics.moveTo(50, 50);
+          graphics.lineTo(250, 50);
+          graphics.lineTo(100, 100);
+          graphics.lineTo(250, 220);
+          graphics.lineTo(50, 220);
+          graphics.lineTo(50, 50);
+          graphics.endFill();
+
+          // set a fill and line style again
+          graphics.lineStyle(10, 0xff0000, 0.8);
+          graphics.beginFill(0xff700b, 1);
+
+          // draw a second shape
+          graphics.moveTo(210, 300);
+          graphics.lineTo(450, 320);
+          graphics.lineTo(570, 350);
+          graphics.quadraticCurveTo(600, 0, 480, 100);
+          graphics.lineTo(330, 120);
+          graphics.lineTo(410, 200);
+          graphics.lineTo(210, 300);
+          graphics.endFill();
+
+          // draw a rectangle
+          graphics.lineStyle(2, 0x0000ff, 1);
+          graphics.drawRect(50, 250, 100, 100);
+
+          // draw a circle
+          graphics.lineStyle(0);
+          graphics.beginFill(0xffff0b, 0.5);
+          graphics.drawCircle(470, 200, 100);
+          graphics.endFill();
+
+          graphics.lineStyle(20, 0x33ff00);
+          graphics.moveTo(30, 30);
+          graphics.lineTo(600, 300);
+
+          app.stage.addChild(graphics);
+
+          // let's create a moving shape
+          const thing = new PIXI.Graphics();
+          app.stage.addChild(thing);
+          thing.x = 800 / 2;
+          thing.y = 600 / 2;
+
+          let count = 0;
+
+          app.ticker.add(function () {
+            count += 0.1;
+
+            thing.clear();
+            thing.lineStyle(10, 0xff0000, 1);
+            thing.beginFill(0xffff00, 0.5);
+
+            thing.moveTo(
+              -120 + Math.sin(count) * 20,
+              -100 + Math.cos(count) * 20
+            );
+            thing.lineTo(
+              120 + Math.cos(count) * 20,
+              -100 + Math.sin(count) * 20
+            );
+            thing.lineTo(
+              120 + Math.sin(count) * 20,
+              100 + Math.cos(count) * 20
+            );
+            thing.lineTo(
+              -120 + Math.cos(count) * 20,
+              100 + Math.sin(count) * 20
+            );
+            thing.lineTo(
+              -120 + Math.sin(count) * 20,
+              -100 + Math.cos(count) * 20
+            );
+
+            thing.rotation = count * 0.1;
           });
         }}
       />
