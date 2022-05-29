@@ -17,13 +17,13 @@
   },
   "dependencies": {
     "@expo/browser-polyfill": "^1.0.0",
+    "@types/pixi.js": "4.8.9",
     "path": "^0.12.7",
     "pixi-filters": "2.7.1",
     "pixi.js": "latest-4.x",
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "@types/pixi.js": "4.8.9",
     "@types/react-native": "^0.67.7",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
@@ -34,10 +34,8 @@
     "prettier": "^2.6.2"
   },
   "peerDependencies": {
-    "expo": "*",
     "expo-asset": "*",
     "expo-gl": "*",
-    "react": "*",
     "react-native": "*"
   }
 }

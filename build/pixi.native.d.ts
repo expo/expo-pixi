@@ -1,7 +1,7 @@
 import "@expo/browser-polyfill";
-import * as PIXIInstance from "pixi.js";
 import { ExpoWebGLRenderingContext } from "expo-gl";
 import * as filters from "pixi-filters";
+import * as PIXIInstance from "pixi.js";
 interface ApplicationOptions extends PIXIInstance.ApplicationOptions {
     context: ExpoWebGLRenderingContext;
 }

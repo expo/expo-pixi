@@ -1,13 +1,12 @@
 import "@expo/browser-polyfill";
 import { Asset } from "expo-asset";
+import * as filters from "pixi-filters";
 import * as PIXIInstance from "pixi.js";
 import { PixelRatio } from "react-native";
-import * as filters from "pixi-filters";
 // Override PIXI.Application to accept expo-gl context:
 // https://pixijs.download/v4.8.9/docs/PIXI.Application.html
 class PIXIApplication extends PIXIInstance.Application {
     constructor({ context, width, height, resolution, ...props }) {
-        console.log("Running Native PIXI");
         if (!context) {
             throw new Error("PIXI context must be a valid WebGL context.");
         }

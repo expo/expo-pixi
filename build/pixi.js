@@ -4,7 +4,6 @@ import { PixelRatio } from "react-native";
 // https://pixijs.download/v4.8.9/docs/PIXI.Application.html
 class PIXIWebApplication extends PIXIInstance.Application {
     constructor({ context, resolution, ...options }) {
-        console.log("Running Web PIXI");
         if (!context) {
             throw new Error("PIXI context must be a valid WebGL context.");
         }
