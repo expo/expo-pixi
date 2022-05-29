@@ -50,6 +50,7 @@ export default class App extends Component {
             <ExpoPixi.Signature
               ref={ref => (this.sketch = ref)}
               style={styles.sketch}
+              maxWeight={1}
               strokeColor={'blue'}
               strokeAlpha={1}
               onReady={this.onReady}
