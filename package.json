@@ -1,57 +1,43 @@
 {
   "name": "expo-pixi",
-  "type": "module",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "version": "2.1.1",
-  "sideEffects": true,
   "description": "Pixi.js V4 Expo",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "sideEffects": true,
   "license": "MIT",
-  "files": [
-    "src"
-  ],
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -cw",
-    "presync": "npm run build",
-    "sync": "rsync -rv dist example/node_modules/expo-pixi && rsync -rv package.json example/node_modules/expo-pixi",
-    "test": "npm run test:lint && npm run test:unit",
-    "test:unit": "npx jest",
-    "test:lint": "npx eslint ./src"
+    "build": "expo-module build",
+    "clean": "expo-module clean",
+    "lint": "expo-module lint",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module"
   },
   "dependencies": {
     "@expo/browser-polyfill": "^1.0.0",
+    "path": "^0.12.7",
     "pixi-filters": "2.7.1",
-    "pixi.js": "latest-4.x"
-  },
-  "peerDependencies": {
-    "expo-asset": "*",
-    "expo-gl": "*",
-    "react": "*",
-    "react-native": "*"
+    "pixi.js": "latest-4.x",
+    "url": "^0.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/plugin-proposal-class-properties": "^7.17.12",
-    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
-    "@babel/preset-typescript": "^7.17.12",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
     "@types/pixi.js": "4.8.9",
     "@types/react-native": "^0.67.7",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-unicorn": "^42.0.0",
-    "prettier": "^2.6.2",
-    "rollup": "^2.74.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "typescript": "~4.3.5"
+    "expo-asset": "^8.5.0",
+    "expo-gl": "^11.3.0",
+    "expo-module-scripts": "^2.0.0",
+    "prettier": "^2.6.2"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "expo-asset": "*",
+    "expo-gl": "*",
+    "react": "*",
+    "react-native": "*"
   }
 }

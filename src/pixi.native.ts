@@ -1,16 +1,10 @@
 import "@expo/browser-polyfill";
 
-import { PixelRatio } from "react-native";
-import { ExpoWebGLRenderingContext } from "expo-gl";
 import { Asset } from "expo-asset";
-
+import { ExpoWebGLRenderingContext } from "expo-gl";
 import * as filters from "pixi-filters";
 import * as PIXIInstance from "pixi.js";
-
-global.PIXI = global.PIXI || PIXIInstance;
-
-export let PIXI = global.PIXI;
-PIXI.filters = { ...(PIXI.filters || {}), ...filters };
+import { PixelRatio } from "react-native";
 
 interface ApplicationOptions extends PIXIInstance.ApplicationOptions {
   context: ExpoWebGLRenderingContext;
@@ -18,7 +12,7 @@ interface ApplicationOptions extends PIXIInstance.ApplicationOptions {
 
 // Override PIXI.Application to accept expo-gl context:
 // https://pixijs.download/v4.8.9/docs/PIXI.Application.html
-class PIXIExpoApplication extends PIXI.Application {
+class PIXIApplication extends PIXIInstance.Application {
   constructor({
     context,
     width,
@@ -26,6 +20,8 @@ class PIXIExpoApplication extends PIXI.Application {
     resolution,
     ...props
   }: ApplicationOptions) {
+    console.log("Running Native PIXI");
+
     if (!context) {
       throw new Error("PIXI context must be a valid WebGL context.");
     }
@@ -55,6 +51,38 @@ class PIXIExpoApplication extends PIXI.Application {
     });
 
     this.ticker.add(() => context.endFrameEXP());
+  }
+}
+
+class PIXISprite extends PIXIInstance.Sprite {
+  static from(asset) {
+    if (isAsset(asset)) {
+      // @ts-ignore https://github.com/expo/browser-polyfill/blob/master/src/DOM/HTMLImageElement.js#L62=L73
+      const image = new global.HTMLImageElement(asset);
+      image.onerror = (e) => console.log(`Asset errored ${asset.name}`, e);
+
+      return PIXIInstance.Sprite.from(image);
+    } else if (isPath(asset)) {
+      return spriteFromAssetAsync(asset);
+    } else {
+      return PIXIInstance.Sprite.from(asset);
+    }
+  }
+}
+
+class PIXITexture extends PIXIInstance.Texture {
+  static from(asset) {
+    if (isAsset(asset)) {
+      // @ts-ignore https://github.com/expo/browser-polyfill/blob/master/src/DOM/HTMLImageElement.js#L62=L73
+      const image = new global.HTMLImageElement(asset);
+      image.onerror = (e) => console.log(`Asset errored ${asset.name}`, e);
+
+      return PIXIInstance.Texture.from(image);
+    } else if (isPath(asset)) {
+      return textureFromAssetAsync(asset);
+    } else {
+      return PIXIInstance.Texture.from(asset);
+    }
   }
 }
 
@@ -95,62 +123,28 @@ function isPath(resource: unknown): resource is string | number {
 // https://github.com/expo/expo/issues/10803#issuecomment-731612476
 async function textureFromAssetAsync(resource: string | number) {
   const asset = await Asset.fromModule(resource).downloadAsync();
-  asset.localUri = fixFileUri(asset.localUri);
+  asset.localUri = fixFileUri(asset.localUri!);
   asset.type = asset.type; // TODO: remove x
 
   const { width, height } = await getImageInfo(asset.localUri);
   asset.width = width;
   asset.height = height;
 
-  return PIXI.Texture.from(asset);
+  return PIXITexture.from(asset as any);
 }
 
 async function spriteFromAssetAsync(resource: string | number) {
   const texture = await textureFromAssetAsync(resource);
-  return PIXI.Sprite.from(texture);
+  return PIXISprite.from(texture as any);
 }
 
-if (!(PIXI.Application instanceof PIXIExpoApplication)) {
-  console.log("Overriding PIXI for Expo");
-
-  const originalSpriteFrom = PIXIInstance.Sprite.from;
-  const originalTextureFrom = PIXIInstance.Texture.from;
-
-  PIXI = {
-    ...PIXI,
-    Application: PIXIExpoApplication,
-    Texture: {
-      ...PIXI.Texture,
-      from: (asset) => {
-        if (isAsset(asset)) {
-          // @ts-ignore https://github.com/expo/browser-polyfill/blob/master/src/DOM/HTMLImageElement.js#L62=L73
-          const image = new global.HTMLImageElement(asset);
-          image.onerror = (e) => console.log(`Asset errored ${asset.name}`, e);
-
-          return originalTextureFrom(image);
-        } else if (isPath(asset)) {
-          return textureFromAssetAsync(asset);
-        } else {
-          return originalTextureFrom(asset);
-        }
-      },
-    },
-    Sprite: {
-      ...PIXI.Sprite,
-      from: (asset) => {
-        if (isAsset(asset)) {
-          // @ts-ignore https://github.com/expo/browser-polyfill/blob/master/src/DOM/HTMLImageElement.js#L62=L73
-          const image = new global.HTMLImageElement(asset);
-          image.onerror = (e) => console.log(`Sprite errored ${asset.name}`, e);
-
-          // @ts-ignore https://github.com/expo/browser-polyfill/blob/master/src/DOM/HTMLImageElement.js#L62=L73
-          return originalSpriteFrom(image);
-        } else if (isPath(asset)) {
-          return spriteFromAssetAsync(asset);
-        } else {
-          return originalSpriteFrom(asset);
-        }
-      },
-    },
-  };
-}
+export const PIXI = {
+  ...PIXIInstance,
+  filters: {
+    ...PIXIInstance.filters,
+    ...filters,
+  },
+  Application: PIXIApplication,
+  Texture: PIXITexture,
+  Sprite: PIXISprite,
+};
