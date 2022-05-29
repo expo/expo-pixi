@@ -4,7 +4,7 @@
   "description": "Pixi.js V4 Expo",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "sideEffects": true,
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "build": "expo-module build",
