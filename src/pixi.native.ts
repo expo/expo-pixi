@@ -20,8 +20,6 @@ class PIXIApplication extends PIXIInstance.Application {
     resolution,
     ...props
   }: ApplicationOptions) {
-    console.log("Running Native PIXI");
-
     if (!context) {
       throw new Error("PIXI context must be a valid WebGL context.");
     }

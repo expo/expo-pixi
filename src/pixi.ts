@@ -10,8 +10,6 @@ interface ApplicationOptions extends PIXIInstance.ApplicationOptions {
 // https://pixijs.download/v4.8.9/docs/PIXI.Application.html
 class PIXIWebApplication extends PIXIInstance.Application {
   constructor({ context, resolution, ...options }: ApplicationOptions) {
-    console.log("Running Web PIXI");
-
     if (!context) {
       throw new Error("PIXI context must be a valid WebGL context.");
     }
