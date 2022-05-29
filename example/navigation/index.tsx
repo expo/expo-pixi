@@ -47,6 +47,17 @@ export default function Navigation() {
             component={GraphicsDynamicScreen}
           />
         </Drawer.Group>
+
+        <Drawer.Group>
+          <Drawer.Screen
+            name="RenderTextureBasic"
+            component={RenderTextureBasicScreen}
+          />
+          <Drawer.Screen
+            name="RenderTextureAdvanced"
+            component={RenderTextureAdvancedScreen}
+          />
+        </Drawer.Group>
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -903,6 +914,166 @@ function GraphicsDynamicScreen() {
             );
 
             thing.rotation = count * 0.1;
+          });
+        }}
+      />
+    </View>
+  );
+}
+
+function RenderTextureBasicScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <GLView
+        style={{ width, height }}
+        onContextCreate={async (context) => {
+          const app = new PIXI.Application({
+            context,
+            width,
+            height,
+            backgroundColor: 0x1099bb,
+          });
+
+          const container = new PIXI.Container();
+          app.stage.addChild(container);
+
+          const texture = await PIXI.Texture.from(
+            require("../assets/bunny.png")
+          );
+
+          for (let i = 0; i < 25; i++) {
+            const bunny = new PIXI.Sprite(texture);
+            bunny.x = (i % 5) * 30;
+            bunny.y = Math.floor(i / 5) * 30;
+            bunny.rotation = Math.random() * (Math.PI * 2);
+            container.addChild(bunny);
+          }
+
+          const brt = new PIXI.BaseRenderTexture(
+            300,
+            300,
+            PIXI.SCALE_MODES.LINEAR,
+            1
+          );
+          const rt = new PIXI.RenderTexture(brt);
+
+          const sprite = new PIXI.Sprite(rt);
+
+          sprite.x = 0;
+          sprite.y = 300;
+          app.stage.addChild(sprite);
+
+          /*
+           * All the bunnies are added to the container with the addChild method
+           * when you do this, all the bunnies become children of the container, and when a container moves,
+           * so do all its children.
+           * This gives you a lot of flexibility and makes it easier to position elements on the screen
+           */
+          container.x = 100;
+          container.y = 60;
+
+          app.ticker.add(function () {
+            app.renderer.render(container, rt);
+          });
+        }}
+      />
+    </View>
+  );
+}
+
+function RenderTextureAdvancedScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <GLView
+        style={{ width, height }}
+        onContextCreate={async (context) => {
+          const app = new PIXI.Application({
+            context,
+            width,
+            height,
+          });
+
+          // create two render textures... these dynamic textures will be used to draw the scene into itself
+          let renderTexture = PIXI.RenderTexture.create(
+            app.screen.width,
+            app.screen.height
+          );
+          let renderTexture2 = PIXI.RenderTexture.create(
+            app.screen.width,
+            app.screen.height
+          );
+          const currentTexture = renderTexture;
+
+          // create a new sprite that uses the render texture we created above
+          const outputSprite = new PIXI.Sprite(currentTexture);
+
+          // align the sprite
+          outputSprite.x = 400;
+          outputSprite.y = 300;
+          outputSprite.anchor.set(0.5);
+
+          // add to stage
+          app.stage.addChild(outputSprite);
+
+          const stuffContainer = new PIXI.Container();
+
+          stuffContainer.x = 400;
+          stuffContainer.y = 300;
+
+          app.stage.addChild(stuffContainer);
+
+          // create an array of image ids..
+          const fruits = [
+            require("../assets/rt_object_01.png"),
+            require("../assets/rt_object_02.png"),
+            require("../assets/rt_object_03.png"),
+            require("../assets/rt_object_04.png"),
+            require("../assets/rt_object_05.png"),
+            require("../assets/rt_object_06.png"),
+            require("../assets/rt_object_07.png"),
+            require("../assets/rt_object_08.png"),
+          ];
+
+          // create an array of items
+          const items = [];
+
+          // now create some items and randomly position them in the stuff container
+          for (let i = 0; i < 20; i++) {
+            const item = await PIXI.Sprite.from(fruits[i % fruits.length]);
+            item.x = Math.random() * 400 - 200;
+            item.y = Math.random() * 400 - 200;
+            item.anchor.set(0.5);
+            stuffContainer.addChild(item);
+            items.push(item);
+          }
+
+          // used for spinning!
+          let count = 0;
+
+          app.ticker.add(function () {
+            for (let i = 0; i < items.length; i++) {
+              // rotate each item
+              const item = items[i];
+              item.rotation += 0.1;
+            }
+
+            count += 0.01;
+
+            // swap the buffers ...
+            const temp = renderTexture;
+            renderTexture = renderTexture2;
+            renderTexture2 = temp;
+
+            // set the new texture
+            outputSprite.texture = renderTexture;
+
+            // twist this up!
+            stuffContainer.rotation -= 0.01;
+            outputSprite.scale.set(1 + Math.sin(count) * 0.2);
+
+            // render the stage to the texture
+            // the 'true' clears the texture before the content is rendered
+            app.renderer.render(app.stage, renderTexture2, false);
           });
         }}
       />
