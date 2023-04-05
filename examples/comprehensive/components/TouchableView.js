@@ -47,7 +47,7 @@ class TouchableView extends React.Component {
       },
     });
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this._panResponder = this.buildGestures();
   }
 
